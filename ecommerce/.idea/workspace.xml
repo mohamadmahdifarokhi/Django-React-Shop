@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="18d6f2c2-b36b-4d9c-8063-b8f4a2b84660" name="Changes" comment="Add gitignore | mti" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="develop_template" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IHRDTGUYGrHZEVGxIRzzwJNL28" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="18d6f2c2-b36b-4d9c-8063-b8f4a2b84660" name="Changes" comment="" />
+      <created>1669836402910</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669836402910</updated>
+      <workItem from="1669836404129" duration="1861000" />
+    </task>
+    <task id="LOCAL-00001" summary="Delete files | mti">
+      <created>1669837759405</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837759405</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add env | mti">
+      <created>1669837781895</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837781895</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add wishlist | mti">
+      <created>1669837797088</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837797088</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add types | mti">
+      <created>1669837805495</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837805495</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add store | mti">
+      <created>1669837814751</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837814751</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add signup | mti">
+      <created>1669837825487</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837825487</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add search | mti">
+      <created>1669837831710</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837831710</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add reviews | mti">
+      <created>1669837839828</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837839828</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add reset pass | mti">
+      <created>1669837862217</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837862217</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add profile | mti">
+      <created>1669837878896</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837878896</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add product | mti">
+      <created>1669837890902</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837890902</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add nav | mti">
+      <created>1669837903736</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837903736</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add index | mti">
+      <created>1669837918361</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837918361</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add home | mti">
+      <created>1669837928044</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837928044</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add footer | mti">
+      <created>1669837936452</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837936452</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Add fixed | mti">
+      <created>1669837946936</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837946936</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add dashboard | mti">
+      <created>1669837961093</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837961093</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Add craco | mti">
+      <created>1669837971450</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837971450</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Add coupons | mti">
+      <created>1669837987609</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837987609</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Add categories | mti">
+      <created>1669837999782</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1669837999782</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Add cart | mti">
+      <created>1669838021715</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1669838021715</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Add auth | mti">
+      <created>1669838027324</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1669838027324</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Add alert | mti">
+      <created>1669838036006</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1669838036006</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Add activate | mti">
+      <created>1669838087405</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1669838087405</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Add gitignore | mti">
+      <created>1669838094889</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1669838094889</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Add gitignore | mti">
+      <created>1669838098215</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1669838098215</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Delete files | mti" />
+    <MESSAGE value="Add env | mti" />
+    <MESSAGE value="Add wishlist | mti" />
+    <MESSAGE value="Add types | mti" />
+    <MESSAGE value="Add store | mti" />
+    <MESSAGE value="Add signup | mti" />
+    <MESSAGE value="Add search | mti" />
+    <MESSAGE value="Add reviews | mti" />
+    <MESSAGE value="Add reset pass | mti" />
+    <MESSAGE value="Add profile | mti" />
+    <MESSAGE value="Add product | mti" />
+    <MESSAGE value="Add nav | mti" />
+    <MESSAGE value="Add index | mti" />
+    <MESSAGE value="Add home | mti" />
+    <MESSAGE value="Add footer | mti" />
+    <MESSAGE value="Add fixed | mti" />
+    <MESSAGE value="Add dashboard | mti" />
+    <MESSAGE value="Add craco | mti" />
+    <MESSAGE value="Add coupons | mti" />
+    <MESSAGE value="Add categories | mti" />
+    <MESSAGE value="Add cart | mti" />
+    <MESSAGE value="Add auth | mti" />
+    <MESSAGE value="Add alert | mti" />
+    <MESSAGE value="Add activate | mti" />
+    <MESSAGE value="Add gitignore | mti" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add gitignore | mti" />
+  </component>
+</project>
