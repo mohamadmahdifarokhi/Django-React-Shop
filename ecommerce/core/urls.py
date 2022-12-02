@@ -10,8 +10,8 @@ urlpatterns = [
                   path('auth/', include('djoser.urls.jwt')),
                   path('auth/', include('djoser.social.urls')),
 
-                  # path('api/category/', include('apps.category.urls', namespace='category')),
-                  # path('api/product/', include('apps.product.urls', namespace='product')),
+                  path('api/category/', include('apps.category.urls', namespace='category')),
+                  path('api/product/', include('apps.product.urls', namespace='product')),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
