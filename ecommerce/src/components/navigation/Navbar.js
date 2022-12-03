@@ -30,6 +30,7 @@ import { logout } from '../../redux/actions/auth'
 // import { get_search_products } from '../../redux/actions/products';
 import SearchBox from './SearchBox'
 import { ShoppingCartIcon } from '@heroicons/react/solid'
+import pc from '../../img/pc-tower.png';
 
 const solutions = [
   {
@@ -200,12 +201,12 @@ function Navbar({
 
   const guestLinks = (
     <Fragment>
-      <Link to="/login" className="text-base font-medium text-gray-500 hover:text-gray-900">
+      <Link to="/login" className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black">
         Sign in
       </Link>
       <Link
         to="/signup"
-        className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+        className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black"
       >
         Sign up
       </Link>
@@ -223,7 +224,7 @@ function Navbar({
               <span className="sr-only">Workflow</span>
               <img
                 className="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                src={pc}
                 alt=""
               />
             </Link>
@@ -288,7 +289,7 @@ function Navbar({
                 <div>
                   <img
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                    src={pc}
                     alt="Workflow"
                   />
                 </div>
@@ -359,7 +360,7 @@ function Navbar({
                 </Link>:
                 <a
                 href="#"
-                className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black"
               >
                 Sign up
               </a>}
