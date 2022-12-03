@@ -4,7 +4,7 @@ from apps.category.models import Category
 
 from django.conf import settings
 
-# domain = settings.DOMAIN
+domain = settings.DOMAIN
 
 
 class Product(models.Model):
@@ -20,7 +20,7 @@ class Product(models.Model):
 
     def get_thumbnail(self):
         if self.photo:
-            return self.photo.url
+            return domain + self.photo.url
         return ''
 
     def __str__(self):
