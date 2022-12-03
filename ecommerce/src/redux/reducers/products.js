@@ -1,4 +1,3 @@
-
 import {
     GET_PRODUCTS_SUCCESS,
     GET_PRODUCTS_FAIL,
@@ -28,9 +27,9 @@ const initialState = {
 };
 
 export default function Products(state = initialState, action) {
-    const { type, payload } = action;
+    const {type, payload} = action;
 
-    switch(type) {
+    switch (type) {
         case GET_PRODUCTS_SUCCESS:
             return {
                 ...state,
