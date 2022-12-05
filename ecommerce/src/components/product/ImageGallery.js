@@ -58,7 +58,7 @@ const ImageGallery=({photo})=>{
                   >
                     {({ selected }) => (
                       <>
-                        <span className="absolute inset-0 rounded-md overflow-hidden">
+                        <span className="shadow-xl absolute inset-0 rounded-md overflow-hidden">
                           <img src={photo} alt="" className="w-full h-full object-center object-cover" />
                         </span>
                         <span
@@ -77,7 +77,7 @@ const ImageGallery=({photo})=>{
 
             <Tab.Panels className="w-full aspect-w-1 aspect-h-1">
               {product && product.images.map((image) => (
-                <Tab.Panel key={image.id}>
+                <Tab.Panel key={image.id} className="shadow-xl">
                   <img
                     src={photo}
                     alt=""

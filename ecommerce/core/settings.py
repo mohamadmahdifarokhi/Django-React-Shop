@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-# این برنامه یک API با عملکرد خوب برای خواندن مقادیر از متغیرهای محیطی یا فایل‌های متنی، تبدیل نوع دسته‌ای و غیره ارائه می‌دهد. بیایید به چند نمونه نگاه کنیم.
 import environ
 from datetime import timedelta
 
@@ -48,8 +47,11 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-PROJECT_APPS = ['apps.user']
-ECOMMERCE_APPS = ['apps.category', 'apps.product']
+PROJECT_APPS = ['apps.user', 'apps.user_profile']
+ECOMMERCE_APPS = ['apps.category', 'apps.product',
+                  'apps.cart', 'apps.shipping', 'apps.orders', 'apps.payment', 'apps.coupons', 'apps.wishlist',
+                  'apps.reviews'
+                  ]
 THIRD_PARTY_APPS = [
     'corsheaders',
     'rest_framework',
