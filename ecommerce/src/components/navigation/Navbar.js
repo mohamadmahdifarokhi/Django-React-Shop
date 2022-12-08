@@ -26,34 +26,34 @@ import {
 } from '@heroicons/react/outline'
 import {connect} from 'react-redux'
 import {logout} from '../../redux/actions/auth'
-// import { get_categories } from '../../redux/actions/categories'
-// import { get_search_products } from '../../redux/actions/products';
+import { get_categories } from '../../redux/actions/categories'
+import { get_search_products } from '../../redux/actions/products';
 import SearchBox from './SearchBox'
 import {ShoppingCartIcon} from '@heroicons/react/solid'
 import pc from '../../img/pc-tower.png';
 
 
-const solutions = [
-    {
-        name: 'Analytics',
-        description: 'Get a better understanding of where your traffic is coming from.',
-        href: '#',
-        icon: ChartBarIcon,
-    },
-    {
-        name: 'Engagement',
-        description: 'Speak directly to your customers in a more meaningful way.',
-        href: '#',
-        icon: CursorClickIcon,
-    },
-    {name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon},
-    {
-        name: 'Integrations',
-        description: "Connect with third-party tools that you're already using.",
-        href: '#',
-        icon: ViewGridIcon,
-    },
-]
+// const solutions = [
+//     {
+//         name: 'Analytics',
+//         description: 'Get a better understanding of where your traffic is coming from.',
+//         href: '#',
+//         icon: ChartBarIcon,
+//     },
+//     {
+//         name: 'Engagement',
+//         description: 'Speak directly to your customers in a more meaningful way.',
+//         href: '#',
+//         icon: CursorClickIcon,
+//     },
+//     {name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon},
+//     {
+//         name: 'Integrations',
+//         description: "Connect with third-party tools that you're already using.",
+//         href: '#',
+//         icon: ViewGridIcon,
+//     },
+// ]
 const callsToAction = [
     {name: 'Watch Demo', href: '#', icon: PlayIcon},
     {name: 'View All Products', href: '#', icon: CheckCircleIcon},
@@ -116,7 +116,7 @@ function Navbar({
     const {category_id, search} = formData;
 
     useEffect(() => {
-        // get_categories()
+        get_categories()
     }, [])
 
     const onChange = e => setFormData({...formData, [e.target.name]: e.target.value});
@@ -315,22 +315,22 @@ function Navbar({
                                 </div>
                                 <div className="mt-6 sm:mt-8">
                                     <nav>
-                                        <div className="grid gap-7 sm:grid-cols-2 sm:gap-y-8 sm:gap-x-4">
-                                            {solutions.map((item) => (
-                                                <a
-                                                    key={item.name}
-                                                    href={item.href}
-                                                    className="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50"
-                                                >
-                                                    <div
-                                                        className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
-                                                        <item.icon className="h-6 w-6" aria-hidden="true"/>
-                                                    </div>
-                                                    <div
-                                                        className="ml-4 text-base font-medium text-gray-900">{item.name}</div>
-                                                </a>
-                                            ))}
-                                        </div>
+                                        {/*<div className="grid gap-7 sm:grid-cols-2 sm:gap-y-8 sm:gap-x-4">*/}
+                                        {/*    {solutions.map((item) => (*/}
+                                        {/*        <a*/}
+                                        {/*            key={item.name}*/}
+                                        {/*            href={item.href}*/}
+                                        {/*            className="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50"*/}
+                                        {/*        >*/}
+                                        {/*            <div*/}
+                                        {/*                className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">*/}
+                                        {/*                <item.icon className="h-6 w-6" aria-hidden="true"/>*/}
+                                        {/*            </div>*/}
+                                        {/*            <div*/}
+                                        {/*                className="ml-4 text-base font-medium text-gray-900">{item.name}</div>*/}
+                                        {/*        </a>*/}
+                                        {/*    ))}*/}
+                                        {/*</div>*/}
                                         <div className="mt-8 text-base">
                                             <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
                                                 {' '}
@@ -341,37 +341,37 @@ function Navbar({
                                 </div>
                             </div>
                             <div className="py-6 px-5">
-                                <div className="grid grid-cols-2 gap-4">
-                                    <a href="#"
-                                       className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                                        Pricing
-                                    </a>
+                                {/*<div className="grid grid-cols-2 gap-4">*/}
+                                {/*    <a href="#"*/}
+                                {/*       className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">*/}
+                                {/*        Pricing*/}
+                                {/*    </a>*/}
 
-                                    <a href="#"
-                                       className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                                        Docs
-                                    </a>
+                                {/*    <a href="#"*/}
+                                {/*       className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">*/}
+                                {/*        Docs*/}
+                                {/*    </a>*/}
 
-                                    <a href="#"
-                                       className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                                        Company
-                                    </a>
+                                {/*    <a href="#"*/}
+                                {/*       className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">*/}
+                                {/*        Company*/}
+                                {/*    </a>*/}
 
-                                    <a href="#"
-                                       className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                                        Resources
-                                    </a>
+                                {/*    <a href="#"*/}
+                                {/*       className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">*/}
+                                {/*        Resources*/}
+                                {/*    </a>*/}
 
-                                    <a href="#"
-                                       className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                                        Blog
-                                    </a>
+                                {/*    <a href="#"*/}
+                                {/*       className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">*/}
+                                {/*        Blog*/}
+                                {/*    </a>*/}
 
-                                    <a href="#"
-                                       className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                                        Contact Sales
-                                    </a>
-                                </div>
+                                {/*    <a href="#"*/}
+                                {/*       className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">*/}
+                                {/*        Contact Sales*/}
+                                {/*    </a>*/}
+                                {/*</div>*/}
                                 <div className="mt-6">
                                     {isAuthenticated ? <Link
                                             to="/dashboard"
@@ -379,21 +379,21 @@ function Navbar({
                                         >
                                             Sign up
                                         </Link> :
-                                        <a
-                                            href="#"
+                                        <Link
+                                            to="/signup"
                                             className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-black"
                                         >
                                             Sign up
-                                        </a>}
+                                        </Link>}
 
 
                                     <p className="mt-6 text-center text-base font-medium text-gray-500">
-                                        Existing customer?{' '}
+                                        Do you have an account ?{' '}
 
 
-                                        <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                                        <Link to="/login" className="text-indigo-600 hover:text-indigo-500">
                                             Sign in
-                                        </a>
+                                        </Link>
                                     </p>
                                 </div>
                             </div>
@@ -409,12 +409,12 @@ function Navbar({
 const mapStateToProps = state => ({
     isAuthenticated: state.Auth.isAuthenticated,
     user: state.Auth.user,
-    // categories: state.Categories.categories,
-    // total_items: state.Cart.total_items
+    categories: state.Categories.categories,
+    total_items: state.Cart.total_items
 })
 
 export default connect(mapStateToProps, {
     logout,
-    // get_categories,
-    // get_search_products
+    get_categories,
+    get_search_products
 })(Navbar)

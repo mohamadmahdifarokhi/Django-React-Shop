@@ -5,3 +5,4 @@ app_name = 'category'
 urlpatterns = [
     path('categories', CategoryListView.as_view(), name='list'),
 ]
+

@@ -2,8 +2,10 @@ import Layout from "../../hocs/Layout"
 
 const Error404 = () => {
     return(
-        <Layout>
+        <Layout >
+            <div className="text-center m-40">
             Error404
+            </div>
         </Layout>
     )
 }

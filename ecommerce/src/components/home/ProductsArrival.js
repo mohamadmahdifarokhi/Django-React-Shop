@@ -15,7 +15,7 @@ export default function ProductsArrival({
             data !== undefined &&
              data.map((product) => (
               <div key={product.id} className="group relative">
-                <div className="shadow-xl p-5 w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                <div className="shadow-xl p-5 w-full min-h-80 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75">
                   <img
                     src={product.photo}
                     alt=""
