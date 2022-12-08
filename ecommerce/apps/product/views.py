@@ -36,10 +36,10 @@ class ListProductsView(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def get(self, request, format=None):
-        sortBy = request.query_params.get('sortBy')
+        sort_by = request.query_params.get('sort_by')
 
-        if not (sortBy == 'date_created' or sortBy == 'price' or sortBy == 'sold' or sortBy == 'name'):
-            sortBy = 'date_created'
+        if not (sort_by == 'date_created' or sort_by == 'price' or sort_by == 'sold' or sort_by == 'name'):
+            sort_by = 'date_created'
 
         order = request.query_params.get('order')
         limit = request.query_params.get('limit')
@@ -58,12 +58,12 @@ class ListProductsView(APIView):
             limit = 6
 
         if order == 'desc':
-            sortBy = '-' + sortBy
-            products = Product.objects.order_by(sortBy).all()[:int(limit)]
+            sort_by = '-' + sort_by
+            products = Product.objects.order_by(sort_by).all()[:int(limit)]
         elif order == 'asc':
-            products = Product.objects.order_by(sortBy).all()[:int(limit)]
+            products = Product.objects.order_by(sort_by).all()[:int(limit)]
         else:
-            products = Product.objects.order_by(sortBy).all()
+            products = Product.objects.order_by(sort_by).all()
 
         products = ProductSerializer(products, many=True)
 

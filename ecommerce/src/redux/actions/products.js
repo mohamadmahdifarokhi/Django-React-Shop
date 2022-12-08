@@ -152,7 +152,6 @@ export const get_related_products = (productId) => async dispatch => {
     }
 }
 
-
 export const get_filtered_products = (category_id, price_range, sort_by, order) => async dispatch => {
     const config = {
         headers: {

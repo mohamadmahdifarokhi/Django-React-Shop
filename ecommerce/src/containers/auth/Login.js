@@ -5,6 +5,8 @@ import {connect} from 'react-redux'
 import { login } from '../../redux/actions/auth'
 import Loader from 'react-loader-spinner'
 import { Navigate } from 'react-router'
+import pc from '../../img/pc-tower.png';
+
 const Login = ({
   login,
   loading
@@ -43,7 +45,7 @@ const Login = ({
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img
             className="mx-auto h-12 w-auto"
-            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+            src={pc}
             alt="Workflow"
           />
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>

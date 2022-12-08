@@ -319,7 +319,7 @@ const Shop = ({
                     <>
                     <h3 className="-mx-2 -my-3 flow-root">
                       <Disclosure.Button className="px-2 py-3 bg-white w-full flex items-center justify-between text-gray-400 hover:text-gray-500">
-                        <span className="font-sofiapro-regular text-gray-900">Mas Filtros</span>
+                        <span className="font-sofiapro-regular text-gray-900">Filter</span>
                         <span className="ml-6 flex items-center">
                           {open ? (
                             <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
@@ -332,7 +332,7 @@ const Shop = ({
                         <div className="space-y-6">
                           <div className='form-group '>
                               <label htmlFor='sortBy' className='mr-3 min-w-0 flex-1 text-gray-500'
-                              >Ver por</label>
+                              >Based on</label>
                                 <select
                                     className='my-2 font-sofiapro-light inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500'
                                     id='sortBy'
@@ -340,16 +340,16 @@ const Shop = ({
                                     onChange={e => onChange(e)}
                                     value={sortBy}
                                 >
-                                  <option value='date_created'>Fecha</option>
-                                  <option value='price'>Precio</option>
+                                  <option value='date_created'>Date</option>
+                                  <option value='price'>Price</option>
                                   <option value='sold'>Sold</option>
-                                  <option value='title'>Nombre</option>
+                                  <option value='title'>Name</option>
 
                                 </select>
                           </div>
                           <div className='form-group'>
                               <label htmlFor='order' className='mr-3 min-w-0 flex-1 text-gray-500'
-                              >Orden</label>
+                              >Order</label>
                               <select
                                   className='my-2 font-sofiapro-light inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500'
                                   id='order'
@@ -372,7 +372,7 @@ const Shop = ({
         type="submit"
         className="float-right inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
       >
-        Buscar
+        Go
       </button>
 
 
@@ -418,6 +418,8 @@ const Shop = ({
                                     <div key={category.id} className=' flex items-center h-5 my-5'>
                                         <input
                                             name='category_id'
+                                            onChange={e => onChange(e)}
+                                            value={category.id.toString()}
                                             type='radio'
                                             className='focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded-full'
                                         />
@@ -432,6 +434,8 @@ const Shop = ({
                                     <div key={category.id} className='flex items-center h-5'>
                                         <input
                                             name='category_id'
+                                            onChange={e => onChange(e)}
+                                            value={category.id.toString()}
                                             type='radio'
                                             className='focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded-full'
                                         />
@@ -446,6 +450,8 @@ const Shop = ({
                                         <div key={sub_category.id} className='flex items-center h-5 ml-2 my-5'>
                                             <input
                                                 name='category_id'
+                                                onChange={e => onChange(e)}
+                                                value={sub_category.id.toString()}
                                                 type='radio'
                                                 className='focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded-full'
                                             />
@@ -513,7 +519,7 @@ const Shop = ({
                         </div>
                       </Disclosure.Panel>
 
-                      
+
 
                     </h3>
                     </>
@@ -525,7 +531,7 @@ const Shop = ({
                     <>
                     <h3 className="-mx-2 -my-3 flow-root">
                       <Disclosure.Button className="px-2 py-3 bg-white w-full flex items-center justify-between text-gray-400 hover:text-gray-500">
-                        <span className="font-sofiapro-regular text-gray-900">Mas Filtros</span>
+                        <span className="font-sofiapro-regular text-gray-900">Filter</span>
                         <span className="ml-6 flex items-center">
                           {open ? (
                             <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
@@ -538,7 +544,7 @@ const Shop = ({
                         <div className="space-y-6">
                           <div className='form-group '>
                               <label htmlFor='sortBy' className='mr-3 min-w-0 flex-1 text-gray-500'
-                              >Ver por</label>
+                              >Based on</label>
                                 <select
                                     className='my-2 font-sofiapro-light inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500'
                                     id='sortBy'
@@ -546,16 +552,16 @@ const Shop = ({
                                     onChange={e => onChange(e)}
                                     value={sortBy}
                                 >
-                                  <option value='date_created'>Fecha</option>
-                                  <option value='price'>Precio</option>
+                                  <option value='date_created'>Date</option>
+                                  <option value='price'>Price</option>
                                   <option value='sold'>Sold</option>
-                                  <option value='title'>Nombre</option>
+                                  <option value='title'>Name</option>
 
                                 </select>
                           </div>
                           <div className='form-group'>
                               <label htmlFor='order' className='mr-3 min-w-0 flex-1 text-gray-500'
-                              >Orden</label>
+                              >Order</label>
                               <select
                                   className='my-2 font-sofiapro-light inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500'
                                   id='order'
@@ -578,7 +584,7 @@ const Shop = ({
                     type="submit"
                     className="float-right inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   >
-                    Buscar
+                    Go
                   </button>
               </form>
 

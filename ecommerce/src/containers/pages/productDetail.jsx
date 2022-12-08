@@ -6,6 +6,12 @@ import {
     get_product,
     get_related_products
 } from "../../redux/actions/products";
+import {
+    get_items,
+    get_total,
+    get_item_total,
+    add_item
+} from "../../redux/actions/cart";
 import Loader from "react-loader-spinner";
 import {useEffect, useState} from "react";
 import ImageGallery from "../../components/product/ImageGallery";
@@ -177,51 +183,51 @@ const ProductDetail = ({
                             </div>
 
                             <div className="mt-6">
-                                <div>
-                                    <h3 className="text-sm text-gray-600">Color</h3>
+                                {/*<div>*/}
+                                {/*    <h3 className="text-sm text-gray-600">Color</h3>*/}
 
-                                    <fieldset className="mt-2">
-                                        <legend className="sr-only">
-                                            Choose a color
-                                        </legend>
-                                        <div className="flex items-center space-x-3">
+                                {/*    <fieldset className="mt-2">*/}
+                                {/*        <legend className="sr-only">*/}
+                                {/*            Choose a color*/}
+                                {/*        </legend>*/}
+                                {/*        <div className="flex items-center space-x-3">*/}
 
-                                            <label
-                                                className="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-700">
-                                                <input type="radio" name="color-choice" value="Washed Black"
-                                                       className="sr-only" aria-labelledby="color-choice-0-label"/>
-                                                <p id="color-choice-0-label" className="sr-only">
-                                                    Washed Black
-                                                </p>
-                                                <span aria-hidden="true"
-                                                      className="h-8 w-8 bg-gray-700 border border-black border-opacity-10 rounded-full"></span>
-                                            </label>
+                                {/*            <label*/}
+                                {/*                className="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-700">*/}
+                                {/*                <input type="radio" name="color-choice" value="Washed Black"*/}
+                                {/*                       className="sr-only" aria-labelledby="color-choice-0-label"/>*/}
+                                {/*                <p id="color-choice-0-label" className="sr-only">*/}
+                                {/*                    Washed Black*/}
+                                {/*                </p>*/}
+                                {/*                <span aria-hidden="true"*/}
+                                {/*                      className="h-8 w-8 bg-gray-700 border border-black border-opacity-10 rounded-full"></span>*/}
+                                {/*            </label>*/}
 
-                                            <label
-                                                className="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400">
-                                                <input type="radio" name="color-choice" value="White"
-                                                       className="sr-only" aria-labelledby="color-choice-1-label"/>
-                                                <p id="color-choice-1-label" className="sr-only">
-                                                    White
-                                                </p>
-                                                <span aria-hidden="true"
-                                                      className="h-8 w-8 bg-white border border-black border-opacity-10 rounded-full"></span>
-                                            </label>
+                                {/*            <label*/}
+                                {/*                className="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400">*/}
+                                {/*                <input type="radio" name="color-choice" value="White"*/}
+                                {/*                       className="sr-only" aria-labelledby="color-choice-1-label"/>*/}
+                                {/*                <p id="color-choice-1-label" className="sr-only">*/}
+                                {/*                    White*/}
+                                {/*                </p>*/}
+                                {/*                <span aria-hidden="true"*/}
+                                {/*                      className="h-8 w-8 bg-white border border-black border-opacity-10 rounded-full"></span>*/}
+                                {/*            </label>*/}
 
 
-                                            <label
-                                                className="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-500">
-                                                <input type="radio" name="color-choice" value="Washed Gray"
-                                                       className="sr-only" aria-labelledby="color-choice-2-label"/>
-                                                <p id="color-choice-2-label" className="sr-only">
-                                                    Washed Gray
-                                                </p>
-                                                <span aria-hidden="true"
-                                                      className="h-8 w-8 bg-gray-500 border border-black border-opacity-10 rounded-full"></span>
-                                            </label>
-                                        </div>
-                                    </fieldset>
-                                </div>
+                                {/*            <label*/}
+                                {/*                className="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-500">*/}
+                                {/*                <input type="radio" name="color-choice" value="Washed Gray"*/}
+                                {/*                       className="sr-only" aria-labelledby="color-choice-2-label"/>*/}
+                                {/*                <p id="color-choice-2-label" className="sr-only">*/}
+                                {/*                    Washed Gray*/}
+                                {/*                </p>*/}
+                                {/*                <span aria-hidden="true"*/}
+                                {/*                      className="h-8 w-8 bg-gray-500 border border-black border-opacity-10 rounded-full"></span>*/}
+                                {/*            </label>*/}
+                                {/*        </div>*/}
+                                {/*    </fieldset>*/}
+                                {/*</div>*/}
 
                                 <p className="mt-4">
                                     {
@@ -252,7 +258,7 @@ const ProductDetail = ({
                                         <button
                                             onClick={addToCart}
                                             className="max-w-xs flex-1 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full">
-                                            Agregar al Carrito
+                                            buy
                                         </button>}
 
                                 </div>
@@ -260,136 +266,136 @@ const ProductDetail = ({
                         </div>
                         <section className='my-5 max-w-7xl'>
                             <div className="grid grid-cols-5">
-                                <div className="col-span-2">
-                                    <div>
+                                {/*      <div className="col-span-2">*/}
+                                {/*          <div>*/}
 
-                                        <button
-                                            className='btn btn-primary btn-sm mb-3 ml-6 mt-2 font-sofiapro-light'
-                                            onClick={getReviews}
-                                        >
-                                            Mostrar todas
-                                        </button>
-                                        <div
-                                            className='mb-1'
-                                            style={{cursor: 'pointer'}}
-                                            onClick={() => filterReviews(5)}
-                                        >
-                                            <Stars rating={5.0}/>
-                                        </div>
-                                        <div
-                                            className='mb-1'
-                                            style={{cursor: 'pointer'}}
-                                            onClick={() => filterReviews(4.0)}
-                                        >
-                                            <Stars rating={4.0}/>
-                                        </div>
-                                        <div
-                                            className='mb-1'
-                                            style={{cursor: 'pointer'}}
-                                            onClick={() => filterReviews(3.0)}
-                                        >
-                                            <Stars rating={3.0}/>
-                                        </div>
-                                        <div
-                                            className='mb-1'
-                                            style={{cursor: 'pointer'}}
-                                            onClick={() => filterReviews(2.0)}
-                                        >
-                                            <Stars rating={2.0}/>
-                                        </div>
-                                        <div
-                                            className='mb-1'
-                                            style={{cursor: 'pointer'}}
-                                            onClick={() => filterReviews(1.0)}
-                                        >
-                                            <Stars rating={1.0}/>
-                                        </div>
-                                    </div>
-                                    {
-                                        review && isAuthenticated ?
-                                            <form onSubmit={e => updateReview(e)}>
-                                                <div>
-                                                    <label htmlFor="comment"
-                                                           className="block text-sm font-medium text-gray-700">
-                                                        Add your review
-                                                    </label>
-                                                    <div className="mt-1">
-                          <textarea
-                              rows={4}
-                              name="comment"
-                              id="comment"
-                              required
-                              value={comment}
-                              onChange={e => onChange(e)}
-                              placeholder={review.comment}
-                              className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                              defaultValue={''}
-                          />
-                                                    </div>
-                                                </div>
-                                                <select
-                                                    name="rating"
-                                                    className="mt-4 float-right"
-                                                    required
-                                                    value={rating}
-                                                    onChange={e => onChange(e)}
-                                                    placeholder="0 - 5">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select>
-                                                <button
-                                                    type="submit"
-                                                    className="mt-4  inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                                >
-                                                    Update
-                                                </button>
-                                            </form> :
+                                {/*              <button*/}
+                                {/*                  className='btn btn-primary btn-sm mb-3 ml-6 mt-2 font-sofiapro-light'*/}
+                                {/*                  onClick={getReviews}*/}
+                                {/*              >*/}
+                                {/*                  Mostrar todas*/}
+                                {/*              </button>*/}
+                                {/*              <div*/}
+                                {/*                  className='mb-1'*/}
+                                {/*                  style={{cursor: 'pointer'}}*/}
+                                {/*                  onClick={() => filterReviews(5)}*/}
+                                {/*              >*/}
+                                {/*                  <Stars rating={5.0}/>*/}
+                                {/*              </div>*/}
+                                {/*              <div*/}
+                                {/*                  className='mb-1'*/}
+                                {/*                  style={{cursor: 'pointer'}}*/}
+                                {/*                  onClick={() => filterReviews(4.0)}*/}
+                                {/*              >*/}
+                                {/*                  <Stars rating={4.0}/>*/}
+                                {/*              </div>*/}
+                                {/*              <div*/}
+                                {/*                  className='mb-1'*/}
+                                {/*                  style={{cursor: 'pointer'}}*/}
+                                {/*                  onClick={() => filterReviews(3.0)}*/}
+                                {/*              >*/}
+                                {/*                  <Stars rating={3.0}/>*/}
+                                {/*              </div>*/}
+                                {/*              <div*/}
+                                {/*                  className='mb-1'*/}
+                                {/*                  style={{cursor: 'pointer'}}*/}
+                                {/*                  onClick={() => filterReviews(2.0)}*/}
+                                {/*              >*/}
+                                {/*                  <Stars rating={2.0}/>*/}
+                                {/*              </div>*/}
+                                {/*              <div*/}
+                                {/*                  className='mb-1'*/}
+                                {/*                  style={{cursor: 'pointer'}}*/}
+                                {/*                  onClick={() => filterReviews(1.0)}*/}
+                                {/*              >*/}
+                                {/*                  <Stars rating={1.0}/>*/}
+                                {/*              </div>*/}
+                                {/*          </div>*/}
+                                {/*          {*/}
+                                {/*              review && isAuthenticated ?*/}
+                                {/*                  <form onSubmit={e => updateReview(e)}>*/}
+                                {/*                      <div>*/}
+                                {/*                          <label htmlFor="comment"*/}
+                                {/*                                 className="block text-sm font-medium text-gray-700">*/}
+                                {/*                              Add your review*/}
+                                {/*                          </label>*/}
+                                {/*                          <div className="mt-1">*/}
+                                {/*<textarea*/}
+                                {/*    rows={4}*/}
+                                {/*    name="comment"*/}
+                                {/*    id="comment"*/}
+                                {/*    required*/}
+                                {/*    value={comment}*/}
+                                {/*    onChange={e => onChange(e)}*/}
+                                {/*    placeholder={review.comment}*/}
+                                {/*    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"*/}
+                                {/*    defaultValue={''}*/}
+                                {/*/>*/}
+                                {/*                          </div>*/}
+                                {/*                      </div>*/}
+                                {/*                      <select*/}
+                                {/*                          name="rating"*/}
+                                {/*                          className="mt-4 float-right"*/}
+                                {/*                          required*/}
+                                {/*                          value={rating}*/}
+                                {/*                          onChange={e => onChange(e)}*/}
+                                {/*                          placeholder="0 - 5">*/}
+                                {/*                          <option value="1">1</option>*/}
+                                {/*                          <option value="2">2</option>*/}
+                                {/*                          <option value="3">3</option>*/}
+                                {/*                          <option value="4">4</option>*/}
+                                {/*                          <option value="5">5</option>*/}
+                                {/*                      </select>*/}
+                                {/*                      <button*/}
+                                {/*                          type="submit"*/}
+                                {/*                          className="mt-4  inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"*/}
+                                {/*                      >*/}
+                                {/*                          Update*/}
+                                {/*                      </button>*/}
+                                {/*                  </form> :*/}
 
-                                            <form onSubmit={e => leaveReview(e)}>
+                                {/*                  <form onSubmit={e => leaveReview(e)}>*/}
 
-                                                <div>
-                                                    <label htmlFor="comment"
-                                                           className="block text-sm font-medium text-gray-700">
-                                                        Add your review
-                                                    </label>
-                                                    <div className="mt-1">
-                          <textarea
-                              rows={4}
-                              name="comment"
-                              id="comment"
-                              required
-                              value={comment}
-                              onChange={e => onChange(e)}
-                              className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                              defaultValue={''}
-                          />
-                                                    </div>
-                                                </div>
-                                                <select
-                                                    name="rating"
-                                                    className="mt-4 float-right"
-                                                    required
-                                                    value={rating}
-                                                    onChange={e => onChange(e)}
-                                                    placeholder="0 - 5">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select>
-                                                <button
-                                                    type="submit"
-                                                    className="mt-4  inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                                >
-                                                    Add
-                                                </button>
-                                            </form>
-                                    }
-                                </div>
+                                {/*                      <div>*/}
+                                {/*                          <label htmlFor="comment"*/}
+                                {/*                                 className="block text-sm font-medium text-gray-700">*/}
+                                {/*                              Add your review*/}
+                                {/*                          </label>*/}
+                                {/*                          <div className="mt-1">*/}
+                                {/*<textarea*/}
+                                {/*    rows={4}*/}
+                                {/*    name="comment"*/}
+                                {/*    id="comment"*/}
+                                {/*    required*/}
+                                {/*    value={comment}*/}
+                                {/*    onChange={e => onChange(e)}*/}
+                                {/*    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"*/}
+                                {/*    defaultValue={''}*/}
+                                {/*/>*/}
+                                {/*                          </div>*/}
+                                {/*                      </div>*/}
+                                {/*                      <select*/}
+                                {/*                          name="rating"*/}
+                                {/*                          className="mt-4 float-right"*/}
+                                {/*                          required*/}
+                                {/*                          value={rating}*/}
+                                {/*                          onChange={e => onChange(e)}*/}
+                                {/*                          placeholder="0 - 5">*/}
+                                {/*                          <option value="1">1</option>*/}
+                                {/*                          <option value="2">2</option>*/}
+                                {/*                          <option value="3">3</option>*/}
+                                {/*                          <option value="4">4</option>*/}
+                                {/*                          <option value="5">5</option>*/}
+                                {/*                      </select>*/}
+                                {/*                      <button*/}
+                                {/*                          type="submit"*/}
+                                {/*                          className="mt-4  inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"*/}
+                                {/*                      >*/}
+                                {/*                          Add*/}
+                                {/*                      </button>*/}
+                                {/*                  </form>*/}
+                                {/*          }*/}
+                                {/*      </div>*/}
                                 <div className="col-span-3">
                                     {reviews && reviews.map((review, index) => (
                                         <>
@@ -434,10 +440,10 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps, {
     get_product,
     get_related_products,
-    // get_items,
-    // add_item,
-    // get_total,
-    // get_item_total,
+    get_items,
+    add_item,
+    get_total,
+    get_item_total,
     // add_wishlist_item,
     // get_wishlist_items,
     // get_wishlist_item_total,
