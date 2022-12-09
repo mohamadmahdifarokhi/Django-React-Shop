@@ -5,31 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40afdd3c-8436-4e92-984d-8cd0664d8c65" name="Changes" comment="Delete file | mti">
-      <change afterPath="$PROJECT_DIR$/apps/cart/migrations/0003_cart_created_cart_deleted_at_cart_is_active_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/cart/migrations/0004_cartitem_created_cartitem_deleted_at_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/category/migrations/0002_category_created_category_deleted_at_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/core/managers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/coupon/migrations/0002_fixedpricecoupon_created_fixedpricecoupon_deleted_at_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/order/migrations/0002_order_created_order_deleted_at_order_is_active_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/product/migrations/0002_product_created_product_deleted_at_product_is_active_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/review/migrations/0002_review_created_review_deleted_at_review_is_active_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/shipping/migrations/0002_shipping_created_shipping_deleted_at_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/user_profile/migrations/0002_userprofile_created_userprofile_deleted_at_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/wishlist/migrations/0002_wishlist_created_wishlist_deleted_at_and_more.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cart/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cart/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cart/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cart/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/category/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/category/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cart/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cart/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/coupon/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/coupon/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/order/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/order/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/product/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/review/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/review/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/shipping/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/shipping/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user_profile/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_profile/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/wishlist/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/wishlist/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +105,7 @@
       <workItem from="1670530291074" duration="1259000" />
       <workItem from="1670536765071" duration="1565000" />
       <workItem from="1670547166156" duration="5565000" />
+      <workItem from="1670572035275" duration="1485000" />
     </task>
     <task id="LOCAL-00001" summary="Add all models | mti">
       <created>1670537851915</created>

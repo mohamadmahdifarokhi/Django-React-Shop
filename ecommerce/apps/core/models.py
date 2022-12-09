@@ -15,7 +15,6 @@ class BaseModel(models.Model):
         editable=False,
     )
 
-
     last_updated = models.DateTimeField(
         auto_now=True,
         editable=False,
