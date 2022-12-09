@@ -35,6 +35,7 @@ class ProductDetailView(APIView):
 class ListProductsView(APIView):
     permission_classes = (permissions.AllowAny,)
 
+
     def get(self, request, format=None):
         sort_by = request.query_params.get('sort_by')
 

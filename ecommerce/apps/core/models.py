@@ -43,7 +43,7 @@ class BaseModel(models.Model):
         editable=False,
     )
 
-    def deleter(self, using=None, keep_parents=False):
+    def deleter(self, using=None):
         self.deleted_at = timezone.now()
         self.is_deleted = True
         self.save(using=using)

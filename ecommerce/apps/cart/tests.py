@@ -6,10 +6,10 @@ from apps.user.models import UserAccount
 class CartTestCase(TestCase):
     def setUp(self):
         user = UserAccount.objects.create_user(
-            email='mahdifarokhi@gmail.com',
-            first_name='mahdi',
-            last_name='farokhi',
-            password='12345678Lte'
+            email='mahdifarokhi1@gmail.com',
+            first_name='mahdi1',
+            last_name='farokhi1',
+            password='12345678Ltee'
         )
 
         cart = Cart.objects.create(
@@ -22,4 +22,6 @@ class CartTestCase(TestCase):
             user=user,
             count=1,
         )
+
+
 

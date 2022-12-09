@@ -1,11 +1,12 @@
 from django.contrib import admin
 from .models import Order, OrderItem
+from ..core.admin import BaseAdmin
 
 
 # Register your models here.
 
 
-class OrderAdmin(admin.ModelAdmin):
+class OrderAdmin(BaseAdmin):
     def has_delete_permission(self, request, obj=None):
         return False
 
@@ -19,7 +20,7 @@ class OrderAdmin(admin.ModelAdmin):
 admin.site.register(Order, OrderAdmin)
 
 
-class OrderItemAdmin(admin.ModelAdmin):
+class OrderItemAdmin(BaseAdmin):
     def has_delete_permission(self, request, obj=None):
         return False
 

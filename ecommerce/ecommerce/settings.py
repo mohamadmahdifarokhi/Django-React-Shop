@@ -36,7 +36,6 @@ THIRD_PARTY_APPS = [
     'corsheaders',
     'rest_framework',
     'djoser',
-    'social_django',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'ckeditor',
@@ -55,7 +54,6 @@ CKEDITOR_CONFIGS = {
 CKEDITOR_UPLOAD_PATH = "/media/"
 
 MIDDLEWARE = [
-    'social_django.middleware.SocialAuthExceptionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
@@ -98,7 +96,6 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:8000',
     'http://127.0.0.1:8000',
     'http://127.0.0.1:3000',
-    'https://vudera.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -106,7 +103,6 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
     'http://127.0.0.1:8000',
     'http://127.0.0.1:3000',
-    'https://vudera.com',
 ]
 
 PASSWORD_HASHERS = [
@@ -159,8 +155,6 @@ REST_FRAMEWORK = {
 }
 
 AUTHENTICATION_BACKENDS = (
-    # 'social_ecommerce.backends.google.GoogleOAuth2',
-    # 'social_ecommerce.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -188,8 +182,6 @@ DJOSER = {
     'USERNAME_RESET_CONFIRM_URL': 'email/reset/confirm/{uid}/{token}',
     'ACTIVATION_URL': 'activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
-    'SOCIAL_AUTH_TOKEN_STRATEGY': 'djoser.social.token.jwt.TokenStrategy',
-    'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': ['http://localhost:8000/google', 'http://localhost:8000/facebook'],
     'SERIALIZERS': {
         'user_create': 'apps.user.serializers.UserCreateSerializer',
         'user': 'apps.user.serializers.UserCreateSerializer',

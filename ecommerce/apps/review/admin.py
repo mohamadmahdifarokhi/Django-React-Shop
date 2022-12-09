@@ -1,7 +1,9 @@
 from django.contrib import admin
 from .models import Review
+from ..core.admin import BaseAdmin
 
-class ReviewAdmin(admin.ModelAdmin):
+
+class ReviewAdmin(BaseAdmin):
     list_display = ('id', 'rating', 'comment', )
     list_display_links = ('id', 'rating', 'comment', )
     list_filter = ('rating', )
