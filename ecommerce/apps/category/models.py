@@ -1,7 +1,9 @@
 from django.db import models
 
+from apps.core.models import BaseModel
 
-class Category(models.Model):
+
+class Category(BaseModel):
     class Meta:
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'

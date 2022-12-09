@@ -3,10 +3,13 @@ from apps.product.models import Product
 from .countries import Countries
 from datetime import datetime
 from django.contrib.auth import get_user_model
+
+from ..core.models import BaseModel
+
 User = get_user_model()
 
 
-class Order(models.Model):
+class Order(BaseModel):
     class OrderStatus(models.TextChoices):
         not_processed = 'not_processed'
         processed = 'processed'
@@ -37,7 +40,7 @@ class Order(models.Model):
         return self.transaction_id
 
 
-class OrderItem(models.Model):
+class OrderItem(BaseModel):
     product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)

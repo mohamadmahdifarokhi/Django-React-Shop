@@ -1,7 +1,6 @@
 from django.test import TestCase
-from .models import Cart, CartItem
+from .models import CartItem, Cart
 from apps.user.models import UserAccount
-from ..product.models import Product
 
 
 class CartTestCase(TestCase):
@@ -13,12 +12,14 @@ class CartTestCase(TestCase):
             password='12345678Lte'
         )
 
-        cart = Cart.objects.create(user=user, total_items=0)
-
-    def test_cart(self):
-        user = UserAccount.objects.get(
-            email='mahdifarokhi@gmail.com'
+        cart = Cart.objects.create(
+            user=user,
+            total_items=1,
         )
-        cart = Cart.objects.get(user=user)
-        self.assertEqual(cart.total_items, 0)
+
+        CartItem.objects.create(
+            cart=cart,
+            user=user,
+            count=1,
+        )
 

@@ -1,7 +1,9 @@
 from django.db import models
 
+from apps.core.models import BaseModel
 
-class Shipping(models.Model):
+
+class Shipping(BaseModel):
     class Meta:
         verbose_name = 'Shipping'
         verbose_name_plural = 'Shipping'

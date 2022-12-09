@@ -4,11 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40afdd3c-8436-4e92-984d-8cd0664d8c65" name="Changes" comment="Add all models | mti" />
+    <list default="true" id="40afdd3c-8436-4e92-984d-8cd0664d8c65" name="Changes" comment="Delete file | mti">
+      <change afterPath="$PROJECT_DIR$/apps/cart/migrations/0003_cart_created_cart_deleted_at_cart_is_active_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/cart/migrations/0004_cartitem_created_cartitem_deleted_at_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/category/migrations/0002_category_created_category_deleted_at_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/core/managers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/coupon/migrations/0002_fixedpricecoupon_created_fixedpricecoupon_deleted_at_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/order/migrations/0002_order_created_order_deleted_at_order_is_active_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/product/migrations/0002_product_created_product_deleted_at_product_is_active_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/review/migrations/0002_review_created_review_deleted_at_review_is_active_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/shipping/migrations/0002_shipping_created_shipping_deleted_at_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/user_profile/migrations/0002_userprofile_created_userprofile_deleted_at_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/wishlist/migrations/0002_wishlist_created_wishlist_deleted_at_and_more.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cart/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cart/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cart/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cart/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/category/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/category/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/coupon/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/coupon/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/order/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/order/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/product/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/review/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/review/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/shipping/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/shipping/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user_profile/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_profile/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/wishlist/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/wishlist/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/settings.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="0" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -27,7 +56,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2IdwFMhCj6TmVWQSmLU5yee5W0H" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -94,6 +125,7 @@
       <workItem from="1670524666408" duration="5243000" />
       <workItem from="1670530291074" duration="1259000" />
       <workItem from="1670536765071" duration="1565000" />
+      <workItem from="1670547166156" duration="5565000" />
     </task>
     <task id="LOCAL-00001" summary="Add all models | mti">
       <created>1670537851915</created>
@@ -109,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670538021174</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Delete file | mti">
+      <created>1670539672328</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670539672328</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +167,20 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add all models | mti" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add all models | mti" />
+    <MESSAGE value="Delete file | mti" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete file | mti" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ecommerce$views.coverage" NAME="views Coverage Results" MODIFIED="1669887606828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/product" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_user_tests.coverage" NAME="Test: apps.user.tests Coverage Results" MODIFIED="1670550923806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_category_tests.coverage" NAME="Test: apps.category.tests Coverage Results" MODIFIED="1670550844604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_order_tests.coverage" NAME="Test: apps.order.tests Coverage Results" MODIFIED="1670552478266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_product_tests.coverage" NAME="Test: apps.product.tests Coverage Results" MODIFIED="1670550886631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_shipping_tests.coverage" NAME="Test: apps.shipping.tests Coverage Results" MODIFIED="1670550915603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$1.coverage" NAME="1 Coverage Results" MODIFIED="1669882221327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../t5" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_coupon_tests.coverage" NAME="Test: apps.coupon.tests Coverage Results" MODIFIED="1670550851638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_review_tests.coverage" NAME="Test: apps.review.tests Coverage Results" MODIFIED="1670550897465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_cart_tests.coverage" NAME="Test: apps.cart.tests Coverage Results" MODIFIED="1670552767868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$skyroom___Copy.coverage" NAME="skyroom - Copy Coverage Results" MODIFIED="1669871805157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Script-Skyroom" />
   </component>
 </project>

@@ -4,10 +4,12 @@ from apps.category.models import Category
 
 from django.conf import settings
 
+from apps.core.models import BaseModel
+
 domain = settings.DOMAIN
 
 
-class Product(models.Model):
+class Product(BaseModel):
     name = models.CharField(max_length=255)
     photo = models.ImageField(upload_to='photos/%Y/%m/')
     description = models.TextField()

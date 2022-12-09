@@ -1,4 +1,6 @@
 from datetime import datetime
+
+from apps.core.models import BaseModel
 from apps.product.models import Product
 from django.db import models
 
@@ -6,7 +8,7 @@ from django.conf import settings
 User = settings.AUTH_USER_MODEL
 
 
-class Review(models.Model):
+class Review(BaseModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     rating = models.DecimalField(max_digits=2, decimal_places=1)

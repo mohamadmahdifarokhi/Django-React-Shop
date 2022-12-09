@@ -1,11 +1,13 @@
 from django.db import models
 from django.conf import settings
 
+from apps.core.models import BaseModel
+
 User = settings.AUTH_USER_MODEL
 from apps.order.countries import Countries
 
 
-class UserProfile(models.Model):
+class UserProfile(BaseModel):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     address_line_1 = models.CharField(max_length=255, default='')
     address_line_2 = models.CharField(max_length=255, default='')

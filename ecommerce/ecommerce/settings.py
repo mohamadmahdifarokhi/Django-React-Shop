@@ -25,7 +25,7 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-PROJECT_APPS = ['apps.user', 'apps.user_profile']
+PROJECT_APPS = ['apps.core', 'apps.user', 'apps.user_profile']
 
 ECOMMERCE_APPS = ['apps.category', 'apps.product',
                   'apps.cart', 'apps.shipping', 'apps.order', 'apps.payment', 'apps.coupon', 'apps.wishlist',
