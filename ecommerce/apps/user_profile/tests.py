@@ -18,7 +18,7 @@ class UserProfileTestCase(TestCase):
             city='city',
             state_province_region='state_province_region',
             zipcode='zipcode',
-            phone='phone',
+            phone='ali',
             country_region='country_region'
         )
 
@@ -32,7 +32,7 @@ class UserProfileTestCase(TestCase):
         self.assertEqual(user_profile.city, 'city')
         self.assertEqual(user_profile.state_province_region, 'state_province_region')
         self.assertEqual(user_profile.zipcode, 'zipcode')
-        self.assertEqual(user_profile.phone, 'phone')
+        self.assertEqual(user_profile.phone, 'ali')
         self.assertEqual(user_profile.country_region, 'country_region')
 
     def test_str(self):
@@ -40,4 +40,4 @@ class UserProfileTestCase(TestCase):
             email='mahdifarokhi@gmail.com'
         )
         user_profile = UserProfile.objects.get(user=user)
-        self.assertEqual(user_profile.__str__(), user)
+        self.assertEqual(user_profile.__str__(), 'alis')
