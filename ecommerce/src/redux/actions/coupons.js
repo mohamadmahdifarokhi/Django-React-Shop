@@ -14,7 +14,7 @@ export const check_coupon = coupon_name => async dispatch => {
     };
 
     try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/coupons/check-coupon?coupon_name=${coupon_name}`, config);
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/coupon/check-coupon?coupon_name=${coupon_name}`, config);
 
         if (res.status === 200) {
             dispatch({
