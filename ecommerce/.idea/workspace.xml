@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40afdd3c-8436-4e92-984d-8cd0664d8c65" name="Changes" comment="Add coupon actions">
-      <change afterPath="$PROJECT_DIR$/src/containers/pages/Dashboard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/actions/orders.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/orders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="40afdd3c-8436-4e92-984d-8cd0664d8c65" name="Changes" comment="Add profile template" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/pro/proj/Django-React-Ecommerce/ecommerce/src/containers/pages",
+    "last_opened_file_path": "D:/pro/proj/Django-React-Ecommerce/ecommerce/src/redux/reducers",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -61,11 +54,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\src\containers\pages" />
       <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\src\redux\reducers" />
       <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\src\redux\actions" />
+      <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\src\containers\pages" />
+      <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\src\components" />
       <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\ecommerce" />
-      <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\apps" />
@@ -139,7 +132,7 @@
       <workItem from="1670631378570" duration="763000" />
       <workItem from="1670634025018" duration="10732000" />
       <workItem from="1670685195247" duration="10552000" />
-      <workItem from="1670737445609" duration="2118000" />
+      <workItem from="1670737445609" duration="3207000" />
     </task>
     <task id="LOCAL-00001" summary="Add all models | mti">
       <created>1670537851915</created>
@@ -211,7 +204,28 @@
       <option name="project" value="LOCAL" />
       <updated>1670737685598</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add order action &amp; reducer">
+      <created>1670740218787</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670740218787</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add profile views">
+      <created>1670741202146</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1670741202146</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add profile template">
+      <created>1670741219773</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1670741219773</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,7 +251,10 @@
     <MESSAGE value="Add paymant and order view" />
     <MESSAGE value="Add payment templates" />
     <MESSAGE value="Add coupon actions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add coupon actions" />
+    <MESSAGE value="Add order action &amp; reducer" />
+    <MESSAGE value="Add profile views" />
+    <MESSAGE value="Add profile template" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add profile template" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ecommerce$views.coverage" NAME="views Coverage Results" MODIFIED="1669887606828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/product" />
