@@ -5,7 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40afdd3c-8436-4e92-984d-8cd0664d8c65" name="Changes" comment="Change profile test | mti">
+      <change afterPath="$PROJECT_DIR$/src/containers/pages/ThankYou.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hocs/PrivateRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/actions/coupons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/actions/payment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/reducers/coupons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/reducers/payment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/order/countries.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/order/countries.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/order/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/order/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/order/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/order/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/order/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/payment/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/payment/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/payment/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/payment/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user_profile/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_profile/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/ShippingForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/ShippingForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/Checkout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/Checkout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/fixedCountries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/fixedCountries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +42,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -44,7 +65,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/pro/proj/Django-React-Ecommerce/ecommerce&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/pro/proj/Django-React-Ecommerce/ecommerce/src/redux/reducers&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -55,10 +76,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\src\redux\reducers" />
+      <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\src\redux\actions" />
+      <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\ecommerce" />
       <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce" />
       <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\order" />
-      <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\user" />
-      <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\ecommerce" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\apps" />
@@ -130,6 +152,8 @@
       <workItem from="1670547166156" duration="5565000" />
       <workItem from="1670572035275" duration="13414000" />
       <workItem from="1670631378570" duration="763000" />
+      <workItem from="1670634025018" duration="10732000" />
+      <workItem from="1670685195247" duration="10552000" />
     </task>
     <task id="LOCAL-00001" summary="Add all models | mti">
       <created>1670537851915</created>
