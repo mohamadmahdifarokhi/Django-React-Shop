@@ -1,8 +1,5 @@
 export const countries = [
     {
-        name: 'Afghanistan'
-    },
-    {
         name: 'Åland Islands'
     },
     {
