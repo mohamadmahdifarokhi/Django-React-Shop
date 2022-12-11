@@ -19,6 +19,8 @@ import Checkout from "./containers/pages/Checkout";
 import ThankYou from "./containers/pages/ThankYou";
 import Dashboard from "./containers/pages/Dashboard";
 import DashboardProfile from "./containers/pages/DashboardProfile";
+import DashboardPayments from "./containers/pages/DashboardPayments";
+import DashboardPaymentDetail from "./containers/pages/DashboardPaymentDetail";
 
 function App() {
     return (
@@ -46,8 +48,8 @@ function App() {
                     <Route exact path='/thankyou' element={<ThankYou/>}/>
 
                     <Route exact path='/dashboard' element={<Dashboard/>}/>
-                    {/*<Route exact path='/dashboard/payments' element={<DashboardPayments/>}/>*/}
-                    {/*<Route exact path='/dashboard/payment/:transaction_id' element={<DashboardPaymentDetail/>}/>*/}
+                    <Route exact path='/dashboard/payments' element={<DashboardPayments/>}/>
+                    <Route exact path='/dashboard/payment/:transaction_id' element={<DashboardPaymentDetail/>}/>
                     <Route exact path='/dashboard/profile' element={<DashboardProfile/>}/>
                 </Routes>
             </Router>
