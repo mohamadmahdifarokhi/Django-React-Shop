@@ -15,6 +15,9 @@ urlpatterns = [
                   path('api/cart/', include('apps.cart.urls', namespace='cart')),
                   path('api/shipping/', include('apps.shipping.urls', namespace='shipping')),
                   path('api/order/', include('apps.order.urls', namespace='order')),
+                  path('api/payment/', include('apps.payment.urls')),
+                  # path('api/coupon/', include('apps.coupon.urls')),
+                  path('api/profile/', include('apps.user_profile.urls')),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
