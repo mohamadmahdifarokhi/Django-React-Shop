@@ -2,7 +2,6 @@ from django.db import models
 
 
 class Countries(models.TextChoices):
-    Afghanistan = 'Afghanistan',
     Åland_Islands = 'Åland Islands',
     Albania = 'Albania',
     Algeria = 'Algeria',

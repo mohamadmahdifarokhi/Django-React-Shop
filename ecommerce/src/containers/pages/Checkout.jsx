@@ -7,16 +7,16 @@ import { setAlert } from '../../redux/actions/alert'
 import { update_item, remove_item } from '../../redux/actions/cart'
 import { useEffect, useState } from 'react'
 import {get_shipping_options} from '../../redux/actions/shipping'
-// import {check_coupon} from '../../redux/actions/coupons'
+import {check_coupon} from '../../redux/actions/coupons'
 import {
   refresh
 } from '../../redux/actions/auth';
 
-// import {
-//   get_payment_total,
-//   get_client_token,
-//   process_payment
-// } from '../../redux/actions/payment';
+import {
+  get_payment_total,
+  get_client_token,
+  process_payment
+} from '../../redux/actions/payment';
 
 import DropIn from 'braintree-web-drop-in-react';
 import Loader from 'react-loader-spinner';
@@ -43,7 +43,7 @@ const Checkout = ({
     original_price,
     total_after_coupon,
     total_amount,
-    total_discount_amount,
+    total_compare_amount,
     estimated_tax,
     shipping_cost,
     check_coupon,
@@ -289,7 +289,7 @@ const Checkout = ({
               renderShipping={renderShipping}
               total_amount={total_amount}
               total_after_coupon={total_after_coupon}
-              total_discount_amount={total_discount_amount}
+              total_compare_amount={total_compare_amount}
               estimated_tax={estimated_tax}
               shipping_cost={shipping_cost}
               shipping_id={shipping_id}
@@ -313,16 +313,16 @@ const mapStateToProps = state => ({
     items: state.Cart.items,
     total_items: state.Cart.total_items,
     shipping: state.Shipping.shipping,
-    // clientToken: state.Payment.clientToken,
-    // made_payment: state.Payment.made_payment,
-    // loading: state.Payment.loading,
-    // original_price: state.Payment.original_price,
-    // total_after_coupon: state.Payment.total_after_coupon,
-    // total_amount: state.Payment.total_amount,
-    // total_discount_amount: state.Payment.total_discount_amount,
-    // estimated_tax: state.Payment.estimated_tax,
-    // shipping_cost: state.Payment.shipping_cost,
-    // coupon: state.Coupons.coupon,
+    clientToken: state.Payment.clientToken,
+    made_payment: state.Payment.made_payment,
+    loading: state.Payment.loading,
+    original_price: state.Payment.original_price,
+    total_after_coupon: state.Payment.total_after_coupon,
+    total_amount: state.Payment.total_amount,
+    total_compare_amount: state.Payment.total_compare_amount,
+    estimated_tax: state.Payment.estimated_tax,
+    shipping_cost: state.Payment.shipping_cost,
+    coupon: state.Coupons.coupon,
 })
 
 export default connect(mapStateToProps,{
@@ -331,8 +331,8 @@ export default connect(mapStateToProps,{
     setAlert,
     get_shipping_options,
     refresh,
-    // get_payment_total,
-    // get_client_token,
-    // process_payment,
-    // check_coupon
+    get_payment_total,
+    get_client_token,
+    process_payment,
+    check_coupon
 }) (Checkout)
