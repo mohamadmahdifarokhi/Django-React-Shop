@@ -10,6 +10,7 @@ import Coupons from "./coupons";
 import Orders from "./orders";
 import Profile from "./profile";
 import Wishlist from "./wishlist";
+import Reviews from "./reviews";
 
 export default combineReducers({
     Auth,
@@ -22,6 +23,7 @@ export default combineReducers({
     Coupons,
     Orders,
     Profile,
-    Wishlist
+    Wishlist,
+    Reviews
 })
 

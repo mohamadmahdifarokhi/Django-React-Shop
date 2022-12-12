@@ -18,6 +18,8 @@ urlpatterns = [
                   path('api/payment/', include('apps.payment.urls')),
                   path('api/coupon/', include('apps.coupon.urls')),
                   path('api/profile/', include('apps.user_profile.urls')),
+                  path('api/wishlist/', include('apps.wishlist.urls')),
+                  path('api/review/', include('apps.review.urls')),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
