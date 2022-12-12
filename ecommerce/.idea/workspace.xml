@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40afdd3c-8436-4e92-984d-8cd0664d8c65" name="Changes" comment="Add review views">
+    <list default="true" id="40afdd3c-8436-4e92-984d-8cd0664d8c65" name="Changes" comment="Change navbar">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.72357114.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.72357114.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/Navbar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +135,8 @@
       <workItem from="1670631378570" duration="763000" />
       <workItem from="1670634025018" duration="10732000" />
       <workItem from="1670685195247" duration="10552000" />
-      <workItem from="1670737445609" duration="27596000" />
+      <workItem from="1670737445609" duration="27911000" />
+      <workItem from="1670822005083" duration="354000" />
     </task>
     <task id="LOCAL-00001" summary="Add all models | mti">
       <created>1670537851915</created>
@@ -289,7 +285,28 @@
       <option name="project" value="LOCAL" />
       <updated>1670818270581</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Change navbar">
+      <created>1670821718395</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1670821718395</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Change navbar">
+      <created>1670821778765</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1670821778765</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Change navbar">
+      <created>1670821912040</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1670821912040</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +342,8 @@
     <MESSAGE value="Add wishlist views" />
     <MESSAGE value="Add review templates" />
     <MESSAGE value="Add review views" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add review views" />
+    <MESSAGE value="Change navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change navbar" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ecommerce$views.coverage" NAME="views Coverage Results" MODIFIED="1669887606828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/product" />
