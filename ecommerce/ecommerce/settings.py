@@ -201,3 +201,5 @@ AUTH_USER_MODEL = "user.UserAccount"
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
