@@ -220,7 +220,7 @@ function Navbar({
 
     return (
         <>
-            <Popover className="relative bg-white">
+            <Popover className="relative">
                 <div className="absolute inset-0  z-30 pointer-events-none" aria-hidden="true"/>
                 <div className="relative z-20">
                     <div
