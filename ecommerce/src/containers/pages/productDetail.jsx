@@ -17,6 +17,12 @@ import {useEffect, useState} from "react";
 import ImageGallery from "../../components/product/ImageGallery";
 import {Navigate} from "react-router";
 import Stars from '../../components/product/Stars'
+import {
+    add_wishlist_item,
+    get_wishlist_item_total,
+    get_wishlist_items,
+    remove_wishlist_item
+} from "../../redux/actions/wishlist";
 
 const ProductDetail = ({
                            get_product,
@@ -103,19 +109,19 @@ const ProductDetail = ({
         window.scrollTo(0, 0)
         get_product(productId)
         get_related_products(productId)
-        // get_wishlist_items()
-        // get_wishlist_item_total()
+        get_wishlist_items()
+        get_wishlist_item_total()
     }, [])
 
     useEffect(() => {
-        // get_reviews(productId);
+        get_reviews(productId);
     }, [productId]);
 
     useEffect(() => {
-        // get_review(productId);
+        get_review(productId);
     }, [productId]);
 
-    // const [rating, setRating] = useState(5.0);
+    const [rating, setRating] = useState(5.0);
 
     const [formData, setFormData] = useState({
         comment: '',
@@ -142,7 +148,7 @@ const ProductDetail = ({
         const fetchData = async () => {
             await delete_review(productId);
             await get_review(productId);
-            // setRating(5.0);
+            setRating(5.0);
             setFormData({
                 comment: ''
             });
@@ -432,9 +438,9 @@ const ProductDetail = ({
 const mapStateToProps = state => ({
     product: state.Products.product,
     isAuthenticated: state.Auth.isAuthenticated,
-    // wishlist: state.Wishlist.wishlist,
-    // review: state.Reviews.review,
-    // reviews: state.Reviews.reviews
+    wishlist: state.Wishlist.wishlist,
+    review: state.Reviews.review,
+    reviews: state.Reviews.reviews
 })
 
 export default connect(mapStateToProps, {
@@ -444,15 +450,15 @@ export default connect(mapStateToProps, {
     add_item,
     get_total,
     get_item_total,
-    // add_wishlist_item,
-    // get_wishlist_items,
-    // get_wishlist_item_total,
-    // remove_wishlist_item,
-    // get_reviews,
-    // get_review,
-    // create_review,
-    // update_review,
-    // delete_review,
-    // filter_reviews
+    add_wishlist_item,
+    get_wishlist_items,
+    get_wishlist_item_total,
+    remove_wishlist_item,
+    get_reviews,
+    get_review,
+    create_review,
+    update_review,
+    delete_review,
+    filter_reviews
 })(ProductDetail)
 

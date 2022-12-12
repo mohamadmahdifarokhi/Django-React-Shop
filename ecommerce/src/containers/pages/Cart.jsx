@@ -9,14 +9,14 @@ import {
     get_total,
     get_item_total
 } from "../../redux/actions/cart";
-// import {
-//     remove_wishlist_item,
-// } from "../../redux/actions/wishlist";
+import {
+    remove_wishlist_item,
+} from "../../redux/actions/wishlist";
 import { useEffect } from "react";
 import CartItem from "../../components/cart/CartItem";
 import { Link } from "react-router-dom";
 import { QuestionMarkCircleIcon } from '@heroicons/react/solid'
-// import WishlistItem from "../../components/cart/WishlistItem";
+import WishlistItem from "../../components/cart/WishlistItem";
 
 
 const Cart = ({
@@ -73,34 +73,34 @@ const Cart = ({
         )
     }
 
-  //   const showWishlistItems = () => {
-  //     return(
-  //         <div>
-  //             {
-  //                 wishlist_items &&
-  //                 wishlist_items !== null &&
-  //                 wishlist_items !== undefined &&
-  //                 wishlist_items.length !== 0 &&
-  //                 wishlist_items.map((item, index)=>{
-  //                     let count = item.count;
-  //                     return (
-  //                         <div key={index}>
-  //                             <WishlistItem
-  //                                 item={item}
-  //                                 count={count}
-  //                                 update_item={update_item}
-  //                                 remove_wishlist_item={remove_wishlist_item}
-  //                                 render={render}
-  //                                 setRender={setRender}
-  //                                 setAlert={setAlert}
-  //                             />
-  //                         </div>
-  //                     );
-  //                 })
-  //             }
-  //         </div>
-  //     )
-  // }
+    const showWishlistItems = () => {
+      return(
+          <div>
+              {
+                  wishlist_items &&
+                  wishlist_items !== null &&
+                  wishlist_items !== undefined &&
+                  wishlist_items.length !== 0 &&
+                  wishlist_items.map((item, index)=>{
+                      let count = item.count;
+                      return (
+                          <div key={index}>
+                              <WishlistItem
+                                  item={item}
+                                  count={count}
+                                  update_item={update_item}
+                                  remove_wishlist_item={remove_wishlist_item}
+                                  render={render}
+                                  setRender={setRender}
+                                  setAlert={setAlert}
+                              />
+                          </div>
+                      );
+                  })
+              }
+          </div>
+      )
+  }
 
     const checkoutButton = () => {
         if (total_items < 1) {
@@ -217,7 +217,7 @@ const Cart = ({
           </section>
         </div>
 
-        {/*{showWishlistItems()}*/}
+        {showWishlistItems()}
 
       </div>
     </div>
@@ -227,7 +227,7 @@ const Cart = ({
 const mapStateToProps = state => ({
     isAuthenticated: state.Auth.isAuthenticated,
     items: state.Cart.items,
-    // wishlist_items: state.Wishlist.items,
+    wishlist_items: state.Wishlist.items,
     amount: state.Cart.amount,
     discount_amount: state.Cart.discount_amount,
     total_items: state.Cart.total_items
@@ -240,5 +240,5 @@ export default connect(mapStateToProps,{
     remove_item,
     update_item,
     setAlert,
-    // remove_wishlist_item
+    remove_wishlist_item
 }) (Cart)
