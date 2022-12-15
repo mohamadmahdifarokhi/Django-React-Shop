@@ -30,7 +30,7 @@ class GetProductReviewsView(APIView):
 
             if Review.objects.filter(product=product).exists():
                 reviews = Review.objects.order_by(
-                    '-date_created'
+                    '-created'
                 ).filter(product=product)
 
                 for review in reviews:
@@ -38,8 +38,9 @@ class GetProductReviewsView(APIView):
 
                     item['id'] = review.id
                     item['rating'] = review.rating
-                    item['comment'] = review.comment
-                    item['date_created'] = review.date_created
+                    item['head'] = review.head
+                    item['body'] = review.body
+                    item['created'] = review.created
                     item['user'] = review.user.first_name
 
                     results.append(item)
@@ -59,7 +60,7 @@ class GetProductReviewsView(APIView):
 class GetProductReviewView(APIView):
     def get(self, request, productId, format=None):
         user = self.request.user
-
+        print('a')
         try:
             product_id = int(productId)
         except:
@@ -84,8 +85,9 @@ class GetProductReviewView(APIView):
 
                 result['id'] = review.id
                 result['rating'] = review.rating
-                result['comment'] = review.comment
-                result['date_created'] = review.date_created
+                result['head'] = review.head
+                result['body'] = review.body
+                result['created'] = review.created
                 result['user'] = review.user.first_name
 
             if len(result) == 0:
@@ -112,6 +114,8 @@ class CreateProductReviewView(APIView):
         user = self.request.user
         data = self.request.data
 
+        print('sssssssss')
+
         try:
             rating = float(data['rating'])
         except:
@@ -120,7 +124,8 @@ class CreateProductReviewView(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
         try:
-            comment = str(data['comment'])
+            head = str(data['head'])
+            body = str(data['body_2'])
         except:
             return Response(
                 {'error': 'Must pass a comment when creating review'},
@@ -149,17 +154,19 @@ class CreateProductReviewView(APIView):
                 user=user,
                 product=product,
                 rating=rating,
-                comment=comment
+                head=head,
+                body=body
             )
 
             if Review.objects.filter(user=user, product=product).exists():
                 result['id'] = review.id
                 result['rating'] = review.rating
-                result['comment'] = review.comment
-                result['date_created'] = review.date_created
+                result['head'] = review.head
+                result['body'] = review.body
+                result['created'] = review.created
                 result['user'] = review.user.first_name
 
-                reviews = Review.objects.order_by('-date_created').filter(
+                reviews = Review.objects.order_by('-created').filter(
                     product=product
                 )
 
@@ -168,8 +175,9 @@ class CreateProductReviewView(APIView):
 
                     item['id'] = review.id
                     item['rating'] = review.rating
-                    item['comment'] = review.comment
-                    item['date_created'] = review.date_created
+                    item['head'] = review.head
+                    item['body'] = review.body
+                    item['created'] = review.created
                     item['user'] = review.user.first_name
 
                     results.append(item)
@@ -206,7 +214,8 @@ class UpdateProductReviewView(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
         try:
-            comment = str(data['comment'])
+            head = str(data['head'])
+            body = str(data['body_2'])
         except:
             return Response(
                 {'error': 'Must pass a comment when creating review'},
@@ -234,18 +243,20 @@ class UpdateProductReviewView(APIView):
             if Review.objects.filter(user=user, product=product).exists():
                 Review.objects.filter(user=user, product=product).update(
                     rating=rating,
-                    comment=comment
+                    head=head,
+                    body=body
                 )
 
                 review = Review.objects.get(user=user, product=product)
 
                 result['id'] = review.id
                 result['rating'] = review.rating
-                result['comment'] = review.comment
-                result['date_created'] = review.date_created
+                result['head'] = review.head
+                result['body'] = review.body
+                result['created'] = review.created
                 result['user'] = review.user.first_name
 
-                reviews = Review.objects.order_by('-date_created').filter(
+                reviews = Review.objects.order_by('-created').filter(
                     product=product
                 )
 
@@ -254,8 +265,9 @@ class UpdateProductReviewView(APIView):
 
                     item['id'] = review.id
                     item['rating'] = review.rating
-                    item['comment'] = review.comment
-                    item['date_created'] = review.date_created
+                    item['head'] = review.head
+                    item['body'] = review.body
+                    item['created'] = review.created
                     item['user'] = review.user.first_name
 
                     results.append(item)
@@ -297,7 +309,7 @@ class DeleteProductReviewView(APIView):
             if Review.objects.filter(user=user, product=product).exists():
                 Review.objects.filter(user=user, product=product).delete()
 
-                reviews = Review.objects.order_by('-date_created').filter(
+                reviews = Review.objects.order_by('-created').filter(
                     product=product
                 )
 
@@ -306,8 +318,9 @@ class DeleteProductReviewView(APIView):
 
                     item['id'] = review.id
                     item['rating'] = review.rating
-                    item['comment'] = review.comment
-                    item['date_created'] = review.date_created
+                    item['head'] = review.head
+                    item['body'] = review.body
+                    item['created'] = review.created
                     item['user'] = review.user.first_name
 
                     results.append(item)
@@ -370,11 +383,11 @@ class FilterProductReviewsView(APIView):
 
             if Review.objects.filter(product=product).exists():
                 if rating == 0.5:
-                    reviews = Review.objects.order_by('-date_created').filter(
+                    reviews = Review.objects.order_by('-created').filter(
                         rating=rating, product=product
                     )
                 else:
-                    reviews = Review.objects.order_by('-date_created').filter(
+                    reviews = Review.objects.order_by('-created').filter(
                         rating__lte=rating,
                         product=product
                     ).filter(
@@ -387,8 +400,9 @@ class FilterProductReviewsView(APIView):
 
                     item['id'] = review.id
                     item['rating'] = review.rating
-                    item['comment'] = review.comment
-                    item['date_created'] = review.date_created
+                    item['head'] = review.head
+                    item['body'] = review.body
+                    item['created'] = review.created
                     item['user'] = review.user.first_name
 
                     results.append(item)

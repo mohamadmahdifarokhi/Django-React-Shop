@@ -5,7 +5,99 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40afdd3c-8436-4e92-984d-8cd0664d8c65" name="Changes" comment="Change navbar">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/core/cities.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/order/migrations/0002_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/review/migrations/0002_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cart/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cart/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cart/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cart/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cart/migrations/0002_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cart/migrations/0002_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cart/migrations/0003_cart_created_cart_deleted_at_cart_is_active_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cart/migrations/0004_cartitem_created_cartitem_deleted_at_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cart/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cart/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cart/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cart/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cart/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/category/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/category/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/category/migrations/0002_category_created_category_deleted_at_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/category/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/category/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/core/managers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/managers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/coupon/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/coupon/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/coupon/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/coupon/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/coupon/migrations/0002_fixedpricecoupon_created_fixedpricecoupon_deleted_at_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/coupon/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/coupon/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/coupon/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/coupon/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/coupon/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/coupon/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/coupon/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/coupon/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/order/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/order/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/order/countries.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/order/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/order/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/order/migrations/0002_order_created_order_deleted_at_order_is_active_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/order/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/order/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/order/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/order/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/payment/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/payment/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/product/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/product/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/product/migrations/0002_product_created_product_deleted_at_product_is_active_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/product/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/product/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/product/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/product/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/review/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/review/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/review/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/review/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/review/migrations/0002_review_created_review_deleted_at_review_is_active_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/review/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/review/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/review/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/review/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/review/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/review/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/shipping/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/shipping/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/shipping/migrations/0002_shipping_created_shipping_deleted_at_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/shipping/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/shipping/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/shipping/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/shipping/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user_profile/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_profile/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user_profile/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_profile/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user_profile/migrations/0002_userprofile_created_userprofile_deleted_at_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user_profile/migrations/0003_alter_userprofile_phone.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user_profile/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_profile/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user_profile/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_profile/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user_profile/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_profile/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/wishlist/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/wishlist/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/wishlist/migrations/0002_wishlist_created_wishlist_deleted_at_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/wishlist/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/wishlist/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/wishlist/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/wishlist/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/wishlist/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/wishlist/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/2.123f092d.chunk.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/css/2.123f092d.chunk.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.2492be50.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.2492be50.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.d6290880.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.d6290880.chunk.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.d6290880.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.d3e11663.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.d3e11663.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/runtime-main.f4cfc34d.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/runtime-main.f4cfc34d.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart/CartItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/CartItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart/WishlistItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/WishlistItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/ShippingForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/ShippingForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigation/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/Checkout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/Checkout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/DashboardPaymentDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/DashboardPaymentDetail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/DashboardPayments.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/DashboardPayments.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/DashboardProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/DashboardProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/productDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/productDetail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/2.123f092d.chunk.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/2.123f092d.chunk.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/runtime-main.f4cfc34d.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/runtime-main.f4cfc34d.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +119,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="hotfix1" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -45,29 +142,55 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/pro/proj/Django-React-Ecommerce/ecommerce/src/components/product&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/pro/proj/Django-React-Ecommerce/ecommerce/apps/shipping&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\apps\shipping" />
+      <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce" />
       <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\src\components\product" />
       <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\src\redux\reducers" />
       <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\src\redux\actions" />
-      <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\src\components\cart" />
-      <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\src\containers\pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\apps\core" />
       <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce\apps" />
       <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce" />
     </key>
   </component>
   <component name="RunManager" selected="Django Server.ecommerce">
+    <configuration name="Test: apps.user_profile.tests.UserProfileTestCase" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="ecommerce" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="apps.user_profile.tests.UserProfileTestCase" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test: apps.user.tests" type="DjangoTestsConfigurationType" temporary="true">
       <module name="ecommerce" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -114,6 +237,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Django tests.Test: apps.user_profile.tests.UserProfileTestCase" />
         <item itemvalue="Django tests.Test: apps.user.tests" />
       </list>
     </recent_temporary>
@@ -135,7 +259,9 @@
       <workItem from="1670634025018" duration="10732000" />
       <workItem from="1670685195247" duration="10552000" />
       <workItem from="1670737445609" duration="27911000" />
-      <workItem from="1670822005083" duration="972000" />
+      <workItem from="1670822005083" duration="37943000" />
+      <workItem from="1670941536162" duration="1455000" />
+      <workItem from="1671084412159" duration="6691000" />
     </task>
     <task id="LOCAL-00001" summary="Add all models | mti">
       <created>1670537851915</created>
@@ -360,17 +486,21 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ecommerce$views.coverage" NAME="views Coverage Results" MODIFIED="1669887606828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/product" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_user_tests.coverage" NAME="Test: apps.user.tests Coverage Results" MODIFIED="1670583936148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_user_tests.coverage" NAME="Test: apps.user.tests Coverage Results" MODIFIED="1670929611312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/ecommerce$settings.coverage" NAME="settings Coverage Results" MODIFIED="1670580529099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ecommerce" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_category_tests.coverage" NAME="Test: apps.category.tests Coverage Results" MODIFIED="1670550844604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_product_tests.coverage" NAME="Test: apps.product.tests Coverage Results" MODIFIED="1670550886631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_shipping_tests.coverage" NAME="Test: apps.shipping.tests Coverage Results" MODIFIED="1670550915603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_user_profile_tests.coverage" NAME="Test: apps.user_profile.tests Coverage Results" MODIFIED="1670584140491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_coupon_tests.coverage" NAME="Test: apps.coupon.tests Coverage Results" MODIFIED="1670550851638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_review_tests.coverage" NAME="Test: apps.review.tests Coverage Results" MODIFIED="1670550897465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_cart_tests.coverage" NAME="Test: apps.cart.tests Coverage Results" MODIFIED="1670581903170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_order_tests.coverage" NAME="Test: apps.order.tests Coverage Results" MODIFIED="1670580496291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_category_tests.coverage" NAME="Test: apps.category.tests Coverage Results" MODIFIED="1670927785724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_product_tests.coverage" NAME="Test: apps.product.tests Coverage Results" MODIFIED="1670929333339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_shipping_tests.coverage" NAME="Test: apps.shipping.tests Coverage Results" MODIFIED="1670929578017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_user_profile_tests.coverage" NAME="Test: apps.user_profile.tests Coverage Results" MODIFIED="1670932892342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_coupon_tests.coverage" NAME="Test: apps.coupon.tests Coverage Results" MODIFIED="1670928242083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_review_tests.coverage" NAME="Test: apps.review.tests Coverage Results" MODIFIED="1670929443895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_cart_tests.coverage" NAME="Test: apps.cart.tests Coverage Results" MODIFIED="1670927674891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_user_profile_tests_UserProfileTestCase.coverage" NAME="Test: apps.user_profile.tests.UserProfileTestCase Coverage Results" MODIFIED="1670930994575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$models.coverage" NAME="models Coverage Results" MODIFIED="1670932393954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/user_profile" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_order_tests.coverage" NAME="Test: apps.order.tests Coverage Results" MODIFIED="1670932154586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_wishlist_tests.coverage" NAME="Test: apps.wishlist.tests Coverage Results" MODIFIED="1670931064334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/ecommerce$1.coverage" NAME="1 Coverage Results" MODIFIED="1669882221327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../t5" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__.coverage" NAME="Test:  Coverage Results" MODIFIED="1670932900047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/ecommerce$skyroom___Copy.coverage" NAME="skyroom - Copy Coverage Results" MODIFIED="1669871805157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Script-Skyroom" />
   </component>
 </project>
