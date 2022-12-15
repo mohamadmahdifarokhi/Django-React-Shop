@@ -227,7 +227,7 @@ function Navbar({
                         className="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-8 md:justify-start md:space-x-10">
                         <div>
                             <Link to="/" className="flex">
-                                <span className="sr-only">Workflow</span>
+                                <span className="sr-only">Mti Pc</span>
                                 <img
                                     className="h-8 w-auto sm:h-10"
                                     src={pc}

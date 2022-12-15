@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { setAlert } from './alert';
-import { get_item_total } from './cart';
+import {setAlert} from './alert';
+import {get_item_total} from './cart';
 import {
     GET_PAYMENT_TOTAL_SUCCESS,
     GET_PAYMENT_TOTAL_FAIL,
@@ -35,7 +35,7 @@ export const get_payment_total = (shipping_id, coupon_name) => async dispatch =>
                 type: GET_PAYMENT_TOTAL_FAIL
             });
         }
-    } catch(err) {
+    } catch (err) {
         dispatch({
             type: GET_PAYMENT_TOTAL_FAIL
         });
@@ -63,7 +63,7 @@ export const get_client_token = () => async dispatch => {
                 type: LOAD_BT_TOKEN_FAIL
             });
         }
-    } catch(err) {
+    } catch (err) {
         dispatch({
             type: LOAD_BT_TOKEN_FAIL
         });
@@ -72,16 +72,13 @@ export const get_client_token = () => async dispatch => {
 
 export const process_payment = (
     nonce,
-    shipping_id,
-    coupon_name,
     full_name,
-    address_line_1,
-    address_line_2,
+    address,
     city,
-    state_province_region,
-    postal_zip_code,
-    country_region,
-    telephone_number
+    price,
+    discount_price,
+    coupon_name,
+    shipping_id,
 ) => async dispatch => {
     const config = {
         headers: {
@@ -93,16 +90,13 @@ export const process_payment = (
 
     const body = JSON.stringify({
         nonce,
-        shipping_id,
-        coupon_name,
         full_name,
-        address_line_1,
-        address_line_2,
+        address,
         city,
-        state_province_region,
-        postal_zip_code,
-        country_region,
-        telephone_number
+        price,
+        discount_price,
+        coupon_name,
+        shipping_id,
     });
 
     dispatch({
@@ -123,7 +117,7 @@ export const process_payment = (
             });
             dispatch(setAlert(res.data.error, 'red'));
         }
-    } catch(err) {
+    } catch (err) {
         dispatch({
             type: PAYMENT_FAIL
         });

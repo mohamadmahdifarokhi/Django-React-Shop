@@ -2,29 +2,25 @@ import { QuestionMarkCircleIcon, SortAscendingIcon, UsersIcon } from '@heroicons
 import { TicketIcon } from '@heroicons/react/outline'
 import { Fragment } from 'react'
 const ShippingForm = ({
-    full_name,
-    address_line_1,
-    address_line_2,
-    city,
-    state_province_region,
-    postal_zip_code,
-    telephone_number,
-    countries,
-    onChange,
-    buy,
     user,
-    renderShipping,
+    full_name,
+    address,
+    city,
+    phone,
     total_amount,
-    total_compare_amount,
+    total_after_coupon,
+    total_discount_amount,
     estimated_tax,
     shipping_cost,
-    shipping_id,
     shipping,
+    shipping_id,
+    buy,
+    onChange,
+    renderShipping,
     renderPaymentInfo,
-    apply_coupon,
     coupon,
+    apply_coupon,
     coupon_name,
-    total_after_coupon
 }) => {
     return (
         <section
@@ -110,7 +106,7 @@ const ShippingForm = ({
                 <dt className="flex text-sm text-gray-600">
                   <span>Subtotal</span>
                 </dt>
-                <dd className="text-sm font-medium text-gray-900">${total_compare_amount}</dd>
+                <dd className="text-sm font-medium text-gray-900">${total_discount_amount}</dd>
               </div>
 
               {
@@ -147,7 +143,7 @@ const ShippingForm = ({
 
                 <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-gray-200 sm:pt-5">
                     <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                        Full name
+                        Full Name
                     </label>
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                         <div className="max-w-lg flex rounded-md shadow-sm">
@@ -167,35 +163,17 @@ const ShippingForm = ({
 
                 <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-gray-200 sm:pt-5">
                     <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                        Address Line 1*
+                        Address
                     </label>
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                         <div className="max-w-lg flex rounded-md shadow-sm">
                         <input
                             type='text'
-                            name='address_line_1'
-                            // placeholder={`${profile.address_line_1}`}
+                            name='address'
+                            // placeholder={`${profile.address}`}
                             onChange={e => onChange(e)}
-                            value={address_line_1}
+                            value={address}
                             required
-                            className="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-300"
-                        />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-gray-200 sm:pt-5">
-                    <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                        Address Line 2
-                    </label>
-                    <div className="mt-1 sm:mt-0 sm:col-span-2">
-                        <div className="max-w-lg flex rounded-md shadow-sm">
-                        <input
-                            type='text'
-                            name='address_line_2'
-                            // placeholder={`${profile.address_line_2}`}
-                            onChange={e => onChange(e)}
-                            value={address_line_2}
                             className="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-300"
                         />
                         </div>
@@ -221,70 +199,6 @@ const ShippingForm = ({
                     </div>
                 </div>
 
-                <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-gray-200 sm:pt-5">
-                    <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                        State/Province/Region*
-                    </label>
-                    <div className="mt-1 sm:mt-0 sm:col-span-2">
-                        <div className="max-w-lg flex rounded-md shadow-sm">
-                        <input
-                            type='text'
-                            name='state_province_region'
-                            // placeholder={`${profile.state_province_region}`}
-                            onChange={e => onChange(e)}
-                            value={state_province_region}
-                            required
-                            className="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-300"
-                        />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-gray-200 sm:pt-5">
-                    <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                        Postal Code*
-                    </label>
-                    <div className="mt-1 sm:mt-0 sm:col-span-2">
-                        <div className="max-w-lg flex rounded-md shadow-sm">
-                        <input
-                            type='text'
-                            name='postal_zip_code'
-                            // placeholder={`${profile.zipcode}`}
-                            onChange={e => onChange(e)}
-                            value={postal_zip_code}
-                            required
-                            className="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-300"
-                        />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="">
-                    <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                        Country/Region*
-                    </label>
-                    <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-gray-200 sm:pt-5">
-              <div className=" sm:col-span-2">
-                <select
-                  id='country_region'
-                  name='country_region'
-                  onChange={e => onChange(e)}
-                  className="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
-                >
-                  {
-                                countries &&
-                                countries !== null &&
-                                countries !== undefined &&
-                                countries.map((country, index) => (
-                                    <option key={index} value={country.name}>
-                                        {country.name}
-                                    </option>
-                                ))
-                            }
-                </select>
-              </div>
-            </div>
-                </div>
 
                 <div className="sm:grid sm:grid-cols-3 mb-4 sm:gap-4 sm:items-start  sm:border-gray-200 sm:pt-5">
                     <label htmlFor="telephone_number" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
@@ -297,7 +211,7 @@ const ShippingForm = ({
                             name='telephone_number'
                             // placeholder={`${profile.phone}`}
                             onChange={e => onChange(e)}
-                            value={telephone_number}
+                            value={phone}
                             required
                             className="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-300"
                         />

@@ -75,7 +75,7 @@ export const get_review = product_id => async dispatch => {
     }
 }
 
-export const create_review = (product_id, rating, comment) => async dispatch => {
+export const create_review = (product_id, rating, head, body_2) => async dispatch => {
     if (localStorage.getItem('access')) {
         const config = {
             headers: {
@@ -87,7 +87,8 @@ export const create_review = (product_id, rating, comment) => async dispatch => 
 
         const body = JSON.stringify({
             rating,
-            comment
+            head,
+            body_2
         });
 
         try {
@@ -115,7 +116,7 @@ export const create_review = (product_id, rating, comment) => async dispatch => 
     }
 }
 
-export const update_review = (product_id, rating, comment) => async dispatch => {
+export const update_review = (product_id, rating, head, body_2) => async dispatch => {
     if (localStorage.getItem('access')) {
         const config = {
             headers: {
@@ -127,7 +128,8 @@ export const update_review = (product_id, rating, comment) => async dispatch => 
 
         const body = JSON.stringify({
             rating,
-            comment
+            head,
+            body_2
         });
 
         try {
