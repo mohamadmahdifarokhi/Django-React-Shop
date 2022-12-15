@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { setAlert } from './alert';
+import {setAlert} from './alert';
 import {
     GET_USER_PROFILE_SUCCESS,
     GET_USER_PROFILE_FAIL,
@@ -29,7 +29,7 @@ export const get_user_profile = () => async dispatch => {
                     type: GET_USER_PROFILE_FAIL
                 });
             }
-        } catch(err) {
+        } catch (err) {
             dispatch({
                 type: GET_USER_PROFILE_FAIL
             });
@@ -39,13 +39,10 @@ export const get_user_profile = () => async dispatch => {
 
 
 export const update_user_profile = (
-    address_line_1,
-    address_line_2,
+    body_2,
     city,
-    state_province_region,
-    zipcode,
     phone,
-    country_region
+    image,
 ) => async dispatch => {
     if (localStorage.getItem('access')) {
         const config = {
@@ -57,13 +54,10 @@ export const update_user_profile = (
         };
 
         const body = JSON.stringify({
-            address_line_1,
-            address_line_2,
+            body_2,
             city,
-            state_province_region,
-            zipcode,
             phone,
-            country_region
+            image,
         });
 
         try {
@@ -81,7 +75,7 @@ export const update_user_profile = (
                 });
                 dispatch(setAlert('Failed to update profile', 'red'));
             }
-        } catch(err) {
+        } catch (err) {
             dispatch({
                 type: UPDATE_USER_PROFILE_FAIL
             });

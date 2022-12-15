@@ -8,11 +8,18 @@ User = settings.AUTH_USER_MODEL
 
 
 class Cart(BaseModel):
+    class Meta:
+        verbose_name = 'Cart'
+        verbose_name_plural = 'Carts'
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    total_items = models.IntegerField(default=0)
 
 
 class CartItem(BaseModel):
-    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    class Meta:
+        verbose_name = 'Cart Item'
+        verbose_name_plural = 'Cart Items'
+
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='items', null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     count = models.IntegerField()

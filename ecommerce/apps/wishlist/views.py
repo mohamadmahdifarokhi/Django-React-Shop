@@ -37,7 +37,6 @@ class GetItemsView(APIView):
 
 class AddItemView(APIView):
     def post(self, request, format=None):
-        print('a')
         user = self.request.user
         data = self.request.data
 
@@ -140,7 +139,6 @@ class RemoveItemView(APIView):
     def delete(self, request, format=None):
         user = self.request.user
         data = self.request.data
-        print('a')
 
         try:
             product_id = int(data['product_id'])

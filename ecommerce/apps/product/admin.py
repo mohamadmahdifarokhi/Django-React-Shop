@@ -7,7 +7,7 @@ from apps.product.models import Product
 @admin.register(Product)
 class ProductAdmin(BaseAdmin):
     list_display = ('id', 'name', 'discount_price',
-                    'price', 'sold',)
+                    'price', 'sold','is_active', 'is_deleted')
     list_display_links = ('id', 'name',)
     list_filter = ('category',)
     list_editable = ('discount_price', 'price')

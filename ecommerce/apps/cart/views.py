@@ -65,7 +65,7 @@ class AddItemView(APIView):
                     {'error': 'Item is already in cart'},
                     status=status.HTTP_409_CONFLICT)
 
-            if int(product.quantity) > 0:
+            if int(product.count) > 0:
                 CartItem.objects.create(
                     product=product, cart=cart, count=count
                 )
@@ -134,10 +134,9 @@ class GetTotalView(APIView):
 class GetItemTotalView(APIView):
     def get(self, request, format=None):
         user = self.request.user
-
         try:
-            cart = Cart.objects.get(user=user)
-            total_items = cart.total_items
+            cart = CartItem.objects.filter(cart__user=user)
+            total_items = len(cart)
 
             return Response(
                 {'total_items': total_items},
@@ -181,7 +180,7 @@ class UpdateItemView(APIView):
                     {'error': 'This product is not in your cart'},
                     status=status.HTTP_404_NOT_FOUND)
 
-            quantity = product.quantity
+            quantity = product.count
 
             if count <= quantity:
                 CartItem.objects.filter(
@@ -323,7 +322,7 @@ class SynchCartView(APIView):
                         status=status.HTTP_404_NOT_FOUND)
 
                 product = Product.objects.get(id=product_id)
-                quantity = product.quantity
+                quantity = product.count
 
                 if CartItem.objects.filter(cart=cart, product=product).exists():
                     # Actualiizamos el item del carrito

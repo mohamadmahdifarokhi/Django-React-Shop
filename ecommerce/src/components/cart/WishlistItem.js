@@ -28,7 +28,7 @@ const WishlistItem = ({
         e.preventDefault()
         const fetchData = async () => {
             try {
-                if (item.product.quantity >= item_count) {
+                if (item.product.count >= item_count) {
                     await update_item(item, item_count);
                 }
                 else {
@@ -118,7 +118,7 @@ const WishlistItem = ({
                     item.product && 
                     item.product !== null &&
                     item.product !== undefined && 
-                    item.product.quantity > 0 ? 
+                    item.product.count > 0 ?
                 (
                     <>
                     <CheckIcon className="flex-shrink-0 h-5 w-5 text-green-500" aria-hidden="true" />

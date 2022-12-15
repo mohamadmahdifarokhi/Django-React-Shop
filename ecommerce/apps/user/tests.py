@@ -19,6 +19,10 @@ class UserAccountTestCase(TestCase):
         self.assertEqual(user.last_name, 'farokhi')
         self.assertEqual(user.is_active, True)
         self.assertEqual(user.is_staff, False)
+        self.assertNotEqual(user.first_name, 'mahdi1')
+        self.assertNotEqual(user.last_name, 'farokhi1')
+        self.assertNotEqual(user.is_active, False)
+        self.assertNotEqual(user.is_staff, True)
 
     def test_get_full_name(self):
         user = UserAccount.objects.get(

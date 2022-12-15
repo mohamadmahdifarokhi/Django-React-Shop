@@ -34,13 +34,14 @@ class ProductDetailView(APIView):
 
 class ListProductsView(APIView):
     permission_classes = (permissions.AllowAny,)
-
+    print("aaa")
+    print(Product.objects.get_queryset().all())
 
     def get(self, request, format=None):
         sort_by = request.query_params.get('sort_by')
 
-        if not (sort_by == 'date_created' or sort_by == 'price' or sort_by == 'sold' or sort_by == 'name'):
-            sort_by = 'date_created'
+        if not (sort_by == 'created' or sort_by == 'price' or sort_by == 'sold' or sort_by == 'name'):
+            sort_by = 'created'
 
         order = request.query_params.get('order')
         limit = request.query_params.get('limit')
@@ -94,7 +95,7 @@ class ListSearchView(APIView):
         # Chequear si algo input ocurrio en la busqueda
         if len(search) == 0:
             # mostrar todos los productos si no hay input en la busqueda
-            search_results = Product.objects.order_by('-date_created').all()
+            search_results = Product.objects.order_by('-created').all()
         else:
             # Si hay criterio de busqueda, filtramos con dicho criterio usando Q
             search_results = Product.objects.filter(
@@ -118,14 +119,14 @@ class ListSearchView(APIView):
         # si la categoria tiene apdre, fitlrar solo por la categoria y no el padre tambien
         if category.parent:
             search_results = search_results.order_by(
-                '-date_created'
+                '-created'
             ).filter(category=category)
 
         else:
             # si esta categoria padre no tiene hijjos, filtrar solo la categoria
             if not Category.objects.filter(parent=category).exists():
                 search_results = search_results.order_by(
-                    '-date_created'
+                    '-created'
                 ).filter(category=category)
 
             else:
@@ -138,7 +139,7 @@ class ListSearchView(APIView):
                 filtered_categories = tuple(filtered_categories)
 
                 search_results = search_results.order_by(
-                    '-date_created'
+                    '-created'
                 ).filter(category__in=filtered_categories)
 
         search_results = ProductSerializer(search_results, many=True)
@@ -227,8 +228,8 @@ class ListBySearchView(APIView):
         price_range = data['price_range']
         sort_by = data['sort_by']
 
-        if not (sort_by == 'date_created' or sort_by == 'price' or sort_by == 'sold' or sort_by == 'name'):
-            sort_by = 'date_created'
+        if not (sort_by == 'created' or sort_by == 'price' or sort_by == 'sold' or sort_by == 'name'):
+            sort_by = 'created'
 
         order = data['order']
 
