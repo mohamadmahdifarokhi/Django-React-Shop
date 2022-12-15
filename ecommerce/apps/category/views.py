@@ -2,16 +2,15 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
-
 from .models import Category
 
 
 class CategoryListView(APIView):
     permission_classes = (permissions.AllowAny,)
 
-    def get(self, request, format=None):
-        if Category.objects.all().exists():
-            categories = Category.objects.all()
+    def get(self, request):
+        if Category.objects.get_active_list().all().exists():
+            categories = Category.objects.get_active_list().all()
             result = []
 
             for category in categories:
