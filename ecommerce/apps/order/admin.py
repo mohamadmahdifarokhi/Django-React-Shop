@@ -3,15 +3,13 @@ from .models import Order, OrderItem
 from ..core.admin import BaseAdmin
 
 
-# Register your models here.
-
-
 class OrderAdmin(BaseAdmin):
     def has_delete_permission(self, request, obj=None):
         return False
 
-    list_display = ('id', 'transaction_id', 'price', 'status',)
-    list_display_links = ('id', 'transaction_id',)
+    list_display = ('id', 'user', 'status',
+                    'created', 'last_updated', 'deleted_at', 'restored_at', 'is_deleted', 'is_active')
+    list_display_links = ('id',)
     list_filter = ('status',)
     list_editable = ('status',)
     list_per_page = 25
@@ -24,8 +22,9 @@ class OrderItemAdmin(BaseAdmin):
     def has_delete_permission(self, request, obj=None):
         return False
 
-    list_display = ('id', 'name', 'price', 'count',)
-    list_display_links = ('id', 'name',)
+    list_display = ('id', 'name', 'price',
+                    'count', 'created', 'last_updated', 'deleted_at', 'restored_at', 'is_deleted', 'is_active')
+    list_display_links = ('id',)
     list_per_page = 25
 
 
