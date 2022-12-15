@@ -19,11 +19,11 @@ import {
     RESET_PASSWORD_CONFIRM_FAIL,
     LOGOUT
 } from './types'
-import { setAlert } from './alert';
+import {setAlert} from './alert';
 import axios from 'axios'
 
 export const check_authenticated = () => async dispatch => {
-    if(localStorage.getItem('access')){
+    if (localStorage.getItem('access')) {
         const config = {
             headers: {
                 'Accept': 'application/json',
@@ -47,7 +47,7 @@ export const check_authenticated = () => async dispatch => {
                     type: AUTHENTICATED_FAIL
                 });
             }
-        } catch(err){
+        } catch (err) {
             dispatch({
                 type: AUTHENTICATED_FAIL
             });
@@ -81,17 +81,18 @@ export const signup = (first_name, last_name, email, password, re_password) => a
     try {
         const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/users/`, body, config);
 
+
         if (res.status === 201) {
             dispatch({
                 type: SIGNUP_SUCCESS,
                 payload: res.data
             });
-            dispatch(setAlert('Te enviamos un correo, por favor activa tu cuenta. Revisa el correo de spam','green'))
+            dispatch(setAlert('Successful Login', 'green'))
         } else {
             dispatch({
                 type: SIGNUP_FAIL
             });
-            dispatch(setAlert('Error al crear cuenta', 'red'));
+            dispatch(setAlert('Error', 'red'));
         }
         dispatch({
             type: REMOVE_AUTH_LOADING
@@ -103,12 +104,12 @@ export const signup = (first_name, last_name, email, password, re_password) => a
         dispatch({
             type: REMOVE_AUTH_LOADING
         });
-        dispatch(setAlert('Error conectando con el servidor, intenta mas tarde.', 'red'));
+        dispatch(setAlert('Error', 'red'));
     }
 };
 
 export const load_user = () => async dispatch => {
-    if(localStorage.getItem('access')){
+    if (localStorage.getItem('access')) {
         const config = {
             headers: {
                 'Authorization': `JWT ${localStorage.getItem('access')}`,
@@ -118,7 +119,7 @@ export const load_user = () => async dispatch => {
 
         try {
             const res = await axios.get(`${process.env.REACT_APP_API_URL}/auth/users/me/`, config);
-        
+
             if (res.status === 200) {
                 dispatch({
                     type: USER_LOADED_SUCCESS,
@@ -129,8 +130,7 @@ export const load_user = () => async dispatch => {
                     type: USER_LOADED_FAIL
                 });
             }
-        }
-        catch(err){
+        } catch (err) {
             dispatch({
                 type: USER_LOADED_FAIL
             });
@@ -160,7 +160,9 @@ export const login = (email, password) => async dispatch => {
 
     try {
         const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/jwt/create/`, body, config);
-    
+        console.log('login', res);
+        console.log('login', res.status);
+        console.log('login', res.data);
         if (res.status === 200) {
             dispatch({
                 type: LOGIN_SUCCESS,
@@ -178,17 +180,16 @@ export const login = (email, password) => async dispatch => {
             dispatch({
                 type: REMOVE_AUTH_LOADING
             });
-            dispatch(setAlert('Error al iniciar sesion.', 'red'));
+            dispatch(setAlert('Error', 'red'));
         }
-    }
-    catch(err){
+    } catch (err) {
         dispatch({
             type: LOGIN_FAIL
         });
         dispatch({
             type: REMOVE_AUTH_LOADING
         });
-        dispatch(setAlert('Error al iniciar sesion. Intenta mas tarde', 'red'));
+        dispatch(setAlert('Error', 'red'));
     }
 }
 
@@ -210,30 +211,29 @@ export const activate = (uid, token) => async dispatch => {
 
     try {
         const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/users/activation/`, body, config);
-    
+
         if (res.status === 204) {
             dispatch({
                 type: ACTIVATION_SUCCESS
             });
-            dispatch(setAlert('Cuenta activada correctamente', 'green'));
+            dispatch(setAlert('Successful Activation', 'green'));
         } else {
             dispatch({
                 type: ACTIVATION_FAIL
             });
-            dispatch(setAlert('Error activando cuenta', 'red'));
+            dispatch(setAlert('Error Activation', 'red'));
         }
         dispatch({
             type: REMOVE_AUTH_LOADING
         });
-    }
-    catch(err){
+    } catch (err) {
         dispatch({
             type: ACTIVATION_FAIL
         });
         dispatch({
             type: REMOVE_AUTH_LOADING
         });
-        dispatch(setAlert('Error al conectar con el servidor, intenta mas tarde.', 'red'));
+        dispatch(setAlert('Error Activation', 'red'));
     }
 };
 
@@ -252,7 +252,7 @@ export const refresh = () => async dispatch => {
 
         try {
             const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/jwt/refresh/`, body, config);
-            
+
             if (res.status === 200) {
                 dispatch({
                     type: REFRESH_SUCCESS,
@@ -263,7 +263,7 @@ export const refresh = () => async dispatch => {
                     type: REFRESH_FAIL
                 });
             }
-        }catch(err){
+        } catch (err) {
             dispatch({
                 type: REFRESH_FAIL
             });
@@ -286,11 +286,11 @@ export const reset_password = (email) => async dispatch => {
         }
     };
 
-    const body = JSON.stringify({ email });
+    const body = JSON.stringify({email});
 
-    try{
+    try {
         const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/users/reset_password/`, body, config);
-        
+
         if (res.status === 204) {
             dispatch({
                 type: RESET_PASSWORD_SUCCESS
@@ -308,8 +308,7 @@ export const reset_password = (email) => async dispatch => {
             });
             dispatch(setAlert('Error sending password reset email', 'red'));
         }
-    }
-    catch(err){
+    } catch (err) {
         dispatch({
             type: RESET_PASSWORD_FAIL
         });
@@ -349,7 +348,7 @@ export const reset_password_confirm = (uid, token, new_password, re_new_password
     } else {
         try {
             const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/users/reset_password_confirm/`, body, config);
-        
+
             if (res.status === 204) {
                 dispatch({
                     type: RESET_PASSWORD_CONFIRM_SUCCESS
@@ -367,7 +366,7 @@ export const reset_password_confirm = (uid, token, new_password, re_new_password
                 });
                 dispatch(setAlert('Error resetting your password', 'red'));
             }
-        } catch(err){
+        } catch (err) {
             dispatch({
                 type: RESET_PASSWORD_CONFIRM_FAIL
             });
