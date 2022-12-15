@@ -10,7 +10,7 @@ User = get_user_model()
 
 
 class UserAdmin(BaseAdmin):
-    list_display = ('id', 'first_name', 'last_name', 'email', 'is_active', 'is_staff', 'is_superuser')
+    list_display = ('id', 'first_name', 'last_name', 'email', 'is_active', 'is_staff', 'is_superuser',)
     list_display_links = ('email',)
     search_fields = ('email',)
     list_per_page = 25
