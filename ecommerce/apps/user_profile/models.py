@@ -5,6 +5,7 @@ from apps.core.cities import Cities
 from django.conf import settings
 
 User = settings.AUTH_USER_MODEL
+domain = settings.DOMAIN
 
 
 class Address(BaseModel):
@@ -31,7 +32,11 @@ class UserProfile(BaseModel):
                                  message="Phone number must be entered in the format: '+999999999'."
                                          " Up to 15 digits allowed.")
     phone = models.CharField(validators=[phone_regex], max_length=17)
-    image = models.ImageField(upload_to='profile_images', blank=True, null=True, default='profile_images/default.png')
+    image = models.ImageField(upload_to='profiles/%Y/%m/')
+
+    def get_thumbnail(self):
+        if self.image:
+            return domain + self.image.url
 
     def __str__(self):
         return self.phone

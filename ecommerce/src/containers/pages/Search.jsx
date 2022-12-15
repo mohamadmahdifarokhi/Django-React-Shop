@@ -74,6 +74,7 @@ const Search = ({
                     get_products,
                     products,
                     get_filtered_products,
+                    searched_products,
                     filtered_products
                 }) => {
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
@@ -124,12 +125,11 @@ const Search = ({
                 );
             });
         } else if (
-            !filtered &&
-            products &&
-            products !== null &&
-            products !== undefined
+            searched_products &&
+            searched_products !== null &&
+            searched_products !== undefined
         ) {
-            products.map((product, index) => {
+            searched_products.map((product, index) => {
                 return display.push(
                     <div key={index}>
                         <ProductCard product={product}/>
@@ -399,7 +399,11 @@ const Search = ({
                     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div
                             className="relative z-10 flex items-baseline justify-between pt-24 pb-6 border-b border-gray-200">
-                            <h1 className="text-4xl font-extrabold tracking-tight text-gray-900">Shop</h1>
+                            <h1 className="text-4xl font-extrabold tracking-tight text-gray-900">Shop
+                            ({searched_products &&
+                            searched_products !== null &&
+                            searched_products !== undefined &&
+                            searched_products.length})</h1>
 
                             <div className="flex items-center">
                                 <button

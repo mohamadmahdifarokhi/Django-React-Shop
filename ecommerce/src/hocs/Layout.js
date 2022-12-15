@@ -8,8 +8,13 @@ import {
 } from "../redux/actions/cart";
 
 import {
-    get_user_profile
+    get_user_profile,
 } from "../redux/actions/profile";
+
+import {
+    get_user_address
+} from "../redux/actions/address";
+
 
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
@@ -26,6 +31,7 @@ const Layout = (props) => {
         props.get_total()
         props.get_item_total()
         props.get_user_profile()
+        props.get_user_address()
     }, []);
 
     return(
@@ -46,5 +52,6 @@ export default connect(null, {
     get_items,
     get_total,
     get_item_total,
-    get_user_profile
+    get_user_profile,
+    get_user_address
 }) (Layout)

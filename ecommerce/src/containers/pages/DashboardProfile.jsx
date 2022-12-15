@@ -48,7 +48,8 @@ const DashboardProfile = ({
                               isAuthenticated,
                               user,
                               update_user_profile,
-                              profile
+                              profile,
+                              address
                           }) => {
 
     const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -80,10 +81,6 @@ const DashboardProfile = ({
     const onSubmit = e => {
         e.preventDefault();
         setLoading(true)
-        console.log(body)
-        console.log(city)
-        console.log(phone)
-        console.log(image)
         update_user_profile(
             body,
             city,
@@ -321,7 +318,7 @@ const DashboardProfile = ({
                                                 <input
                                                     type="text"
                                                     name='body'
-                                                    placeholder={`${profile.body}`}
+                                                    placeholder={`${address.body}`}
                                                     onChange={e => onChange(e)}
                                                     value={body}
                                                     className="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-md sm:text-sm border-gray-500"
@@ -334,7 +331,7 @@ const DashboardProfile = ({
                                         className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                                         <label htmlFor="city"
                                                className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                                            City
+                                            City ({address.city})
                                         </label>
                                         <div className="mt-1 sm:mt-0 sm:col-span-2">
                                             <select
@@ -342,7 +339,7 @@ const DashboardProfile = ({
                                                 name='city'
                                                 onChange={e => onChange(e)}
                                             >
-                                                <option value={city}>{profile.city}</option>
+                                                <option value={city}>{address.city}</option>
                                                 {
                                                     countries && countries.map((country, index) => (
                                                         <option key={index} value={country.name}>{country.name}</option>
@@ -404,6 +401,7 @@ const mapStateToProps = state => ({
     isAuthenticated: state.Auth.isAuthenticated,
     user: state.Auth.user,
     profile: state.Profile.profile,
+    address:state.Address.address
 })
 
 export default connect(mapStateToProps, {

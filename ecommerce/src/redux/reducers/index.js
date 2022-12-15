@@ -11,6 +11,7 @@ import Orders from "./orders";
 import Profile from "./profile";
 import Wishlist from "./wishlist";
 import Reviews from "./reviews";
+import Address from "./address";
 
 export default combineReducers({
     Auth,
@@ -24,6 +25,7 @@ export default combineReducers({
     Orders,
     Profile,
     Wishlist,
-    Reviews
+    Reviews,
+    Address
 })
 

@@ -3,6 +3,8 @@ import {setAlert} from './alert';
 import {
     GET_USER_PROFILE_SUCCESS,
     GET_USER_PROFILE_FAIL,
+    GET_USER_ADDRESS_SUCCESS,
+    GET_USER_ADDRESS_FAIL,
     UPDATE_USER_PROFILE_SUCCESS,
     UPDATE_USER_PROFILE_FAIL
 } from './types';

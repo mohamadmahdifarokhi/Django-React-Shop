@@ -10,9 +10,9 @@ const initialState = {
 };
 
 export default function Profile(state = initialState, action) {
-    const { type, payload } = action;
+    const {type, payload} = action;
 
-    switch(type) {
+    switch (type) {
         case GET_USER_PROFILE_SUCCESS:
             return {
                 ...state,
