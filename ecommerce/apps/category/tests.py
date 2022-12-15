@@ -11,6 +11,7 @@ class CategoryTestCase(TestCase):
     def test_category(self):
         category = Category.objects.get(name='category')
         self.assertEqual(category.name, 'category')
+        self.assertNotEqual(category.name, 'category1')
 
     def test_str(self):
         category = Category.objects.get(name='category')

@@ -23,7 +23,7 @@ class ReviewTestCase(TestCase):
             price=100,
             discount_price=200,
             category=category,
-            quantity=1,
+            count=1,
             sold=1,
         )
 
@@ -31,7 +31,8 @@ class ReviewTestCase(TestCase):
             user=user,
             product=product,
             rating=5,
-            comment='comment',
+            head='head',
+            body='comment',
         )
 
     def test_review(self):
@@ -41,7 +42,10 @@ class ReviewTestCase(TestCase):
         product = Product.objects.get(name='product1')
         review = Review.objects.get(user=user, product=product)
         self.assertEqual(review.rating, 5)
-        self.assertEqual(review.comment, 'comment')
+        self.assertEqual(review.body, 'comment')
+        self.assertEqual(review.head, 'head')
+        self.assertNotEqual(review.body, 'comment1')
+        self.assertNotEqual(review.head, 'head1')
 
     def test_str(self):
         user = UserAccount.objects.get(
@@ -49,7 +53,7 @@ class ReviewTestCase(TestCase):
         )
         product = Product.objects.get(name='product1')
         review = Review.objects.get(user=user, product=product)
-        self.assertEqual(review.__str__(), 'comment')
+        self.assertEqual(review.__str__(), 'head')
 
 
 

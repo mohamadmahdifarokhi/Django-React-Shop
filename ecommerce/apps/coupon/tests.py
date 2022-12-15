@@ -1,32 +1,26 @@
+from datetime import datetime
+
 from django.test import TestCase
-from .models import PercentageCoupon, FixedPriceCoupon
+from .models import Coupon
 
 
 class CouponTestCase(TestCase):
     def setUp(self):
-        PercentageCoupon.objects.create(
+        Coupon.objects.create(
             name='percentage',
-            discount_percentage=10
-        )
-        FixedPriceCoupon.objects.create(
-            name='fixed',
-            discount_price=10
+            discount_percentage=10,
+            started='2018-01-01 00:00:00',
+            ended='2019-01-01 00:00:00',
         )
 
-    def test_percentage_coupon(self):
-        coupon = PercentageCoupon.objects.get(name='percentage')
+    def test_coupon(self):
+        coupon = Coupon.objects.get(name='percentage')
         self.assertEqual(coupon.name, 'percentage')
         self.assertEqual(coupon.discount_percentage, 10)
+        self.assertNotEqual(coupon.discount_price, 11)
+        self.assertIsInstance(coupon.started, datetime)
+        self.assertIsInstance(coupon.ended, datetime)
 
-    def test_fixed_price_coupon(self):
-        coupon = FixedPriceCoupon.objects.get(name='fixed')
-        self.assertEqual(coupon.name, 'fixed')
-        self.assertEqual(coupon.discount_price, 10)
-
-    def test_percentage_str(self):
-        coupon = PercentageCoupon.objects.get(name='percentage')
+    def test_str(self):
+        coupon = Coupon.objects.get(name='percentage')
         self.assertEqual(coupon.__str__(), 'percentage')
-
-    def test_fixed_str(self):
-        coupon = FixedPriceCoupon.objects.get(name='fixed')
-        self.assertEqual(coupon.__str__(), 'fixed')
