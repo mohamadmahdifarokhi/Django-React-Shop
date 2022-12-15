@@ -139,18 +139,12 @@ const Dashboard =({
           <div className="flex flex-col flex-grow border-r border-gray-200 pt-5 bg-white overflow-y-auto">
             <div className="flex items-center flex-shrink-0 px-4">
 
-            <Link
-                to="/"
-                className="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-                Regresar
-            </Link>
-            
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
-                alt="Workflow"
-              />
+
+              {/*<img*/}
+              {/*  className="h-8 w-auto"*/}
+              {/*  src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"*/}
+              {/*  alt="Workflow"*/}
+              {/*/>*/}
               
             </div>
             <div className="mt-5 flex-grow flex flex-col">
@@ -172,32 +166,32 @@ const Dashboard =({
             </button>
             <div className="flex-1 px-4 flex justify-between">
               <div className="flex-1 flex">
-                <form className="w-full flex md:ml-0" action="#" method="GET">
-                  <label htmlFor="search-field" className="sr-only">
-                    Search
-                  </label>
-                  <div className="relative w-full text-gray-400 focus-within:text-gray-600">
-                    <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none">
-                      <SearchIcon className="h-5 w-5" aria-hidden="true" />
-                    </div>
-                    <input
-                      id="search-field"
-                      className="block w-full h-full pl-8 pr-3 py-2 border-transparent text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-0 focus:border-transparent sm:text-sm"
-                      placeholder="Search"
-                      type="search"
-                      name="search"
-                    />
-                  </div>
-                </form>
+                {/*<form className="w-full flex md:ml-0" action="#" method="GET">*/}
+                {/*  <label htmlFor="search-field" className="sr-only">*/}
+                {/*    Search*/}
+                {/*  </label>*/}
+                {/*  <div className="relative w-full text-gray-400 focus-within:text-gray-600">*/}
+                {/*    <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none">*/}
+                {/*      <SearchIcon className="h-5 w-5" aria-hidden="true" />*/}
+                {/*    </div>*/}
+                {/*    <input*/}
+                {/*      id="search-field"*/}
+                {/*      className="block w-full h-full pl-8 pr-3 py-2 border-transparent text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-0 focus:border-transparent sm:text-sm"*/}
+                {/*      placeholder="Search"*/}
+                {/*      type="search"*/}
+                {/*      name="search"*/}
+                {/*    />*/}
+                {/*  </div>*/}
+                {/*</form>*/}
               </div>
               <div className="ml-4 flex items-center md:ml-6">
-                <button
-                  type="button"
-                  className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+                {/*<button*/}
+                {/*  type="button"*/}
+                {/*  className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"*/}
+                {/*>*/}
+                {/*  <span className="sr-only">View notifications</span>*/}
+                {/*  <BellIcon className="h-6 w-6" aria-hidden="true" />*/}
+                {/*</button>*/}
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">

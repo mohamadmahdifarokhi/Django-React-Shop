@@ -10,7 +10,7 @@ class OrderAdmin(BaseAdmin):
     def has_delete_permission(self, request, obj=None):
         return False
 
-    list_display = ('id', 'transaction_id', 'amount', 'status',)
+    list_display = ('id', 'transaction_id', 'price', 'status',)
     list_display_links = ('id', 'transaction_id',)
     list_filter = ('status',)
     list_editable = ('status',)
