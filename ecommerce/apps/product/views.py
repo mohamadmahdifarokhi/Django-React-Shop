@@ -20,7 +20,7 @@ class ProductDetailView(APIView):
 
         if Product.objects.get_active_list().filter(id=product_id).exists():
             product = Product.objects.get_active_list().get(id=product_id)
-            print('1',product)
+
             product = ProductSerializer(product)
 
             return Response({'product': product.data}, status=status.HTTP_200_OK)
@@ -77,8 +77,6 @@ class ListSearchView(APIView):
 
     def post(self, request):
         data = self.request.data
-        print("ddddddddddd")
-        print(data)
 
         try:
             category_id = int(data['category_id'])
@@ -97,7 +95,7 @@ class ListSearchView(APIView):
             )
 
         if category_id == 0:
-            print('0', search_results)
+
             search_results = ProductSerializer(search_results, many=True)
             return Response(
                 {'search_products': search_results.data},
@@ -133,7 +131,7 @@ class ListSearchView(APIView):
                 search_results = search_results.order_by(
                     '-created'
                 ).filter(category__in=filtered_categories)
-        print(search_results)
+
         search_results = ProductSerializer(search_results, many=True)
         return Response({'search_products': search_results.data}, status=status.HTTP_200_OK)
 
@@ -206,7 +204,7 @@ class ListBySearchView(APIView):
 
     def post(self, request):
         data = self.request.data
-        print('a')
+
 
         try:
             category_id = int(data['category_id'])

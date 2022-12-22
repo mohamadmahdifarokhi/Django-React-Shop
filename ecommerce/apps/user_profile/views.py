@@ -3,16 +3,16 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import UserProfile, Address
 from .serializers import UserProfileSerializer, AddressSerializer
+from rest_framework import permissions
 
 
 class GetUserProfileView(APIView):
+    permission_classes = (permissions.IsAuthenticated,)
 
     def get(self, request):
         try:
             user = self.request.user
             user_profile = UserProfile.objects.get(user=user)
-            address = user_profile.address.address
-            city = user_profile.address.city
             user_profile = UserProfileSerializer(user_profile)
 
             return Response(
@@ -30,11 +30,9 @@ class GetUserAddressView(APIView):
 
     def post(self, request):
         try:
-            print('xxxxxxxx')
             user = self.request.user
             user_profile = UserProfile.objects.get(user=user)
             address = user_profile.address
-            print(address)
             address = AddressSerializer(address)
 
             return Response(
@@ -58,10 +56,6 @@ class UpdateUserProfileView(APIView):
             city = data['city']
             phone = data['phone']
             image = data['image']
-            print(body)
-            print(city)
-            print(phone)
-            print(image)
 
             user_profile = UserProfile.objects.get(user=user)
             address = Address.objects.get(id=user_profile.address.id)

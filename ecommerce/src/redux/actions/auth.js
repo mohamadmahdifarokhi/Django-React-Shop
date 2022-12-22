@@ -160,9 +160,6 @@ export const login = (email, password) => async dispatch => {
 
     try {
         const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/jwt/create/`, body, config);
-        console.log('login', res);
-        console.log('login', res.status);
-        console.log('login', res.data);
         if (res.status === 200) {
             dispatch({
                 type: LOGIN_SUCCESS,

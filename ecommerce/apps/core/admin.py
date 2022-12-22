@@ -14,4 +14,9 @@ class BaseAdmin(admin.ModelAdmin):
     def activate(self, request, queryset):
         queryset.update(is_active=True)
 
-    actions = ['logical_deleter', 'deactivate', 'activate']
+    def undelete(self, request, queryset):
+        queryset.update(is_deleted=False)
+        queryset.update(deleted_at=None)
+        queryset.update(is_active=True)
+
+    actions = ['logical_deleter', 'deactivate', 'activate', 'undelete']

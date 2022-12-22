@@ -1,6 +1,5 @@
 from django.test import TestCase
 
-from ecommerce import settings
 from .models import UserProfile, Address
 from ..user.models import UserAccount
 
@@ -28,14 +27,14 @@ class UserProfileTestCase(TestCase):
     #     user = UserAccount.objects.get(
     #         email='mahdifarokhi@gmail.com',
     #     )
-    #     print(user)
+
     #     user_profile = UserProfile.objects.get(user=user)
-    # self.assertEqual(user_profile.phone, '09123127203')
-    # self.assertEqual(user_profile.image, 'image')
-    # self.assertNotEqual(user_profile.phone, '091231272031')
-    # self.assertNotEqual(user_profile.image, 'image1')
-    # self.assertEqual(user_profile.address.body, 'onja')
-    # self.assertEqual(user_profile.address.city, 'tehran')
+    #     self.assertEqual(user_profile.phone, '09123127203')
+    #     self.assertEqual(user_profile.image, 'image')
+    #     self.assertNotEqual(user_profile.phone, '091231272031')
+    #     self.assertNotEqual(user_profile.image, 'image1')
+    #     self.assertEqual(user_profile.address.body, 'onja')
+    #     self.assertEqual(user_profile.address.city, 'tehran')
 
     # def test_str(self):
     #     user = UserAccount.objects.get(

@@ -68,7 +68,6 @@ class ListOrderDetailView(APIView):
                     sub_item['count'] = order_item.count
 
                     result['order_items'].append(sub_item)
-                print(result)
                 return Response(
                     {'order': result},
                     status=status.HTTP_200_OK

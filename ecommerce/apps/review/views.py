@@ -60,7 +60,7 @@ class GetProductReviewsView(APIView):
 class GetProductReviewView(APIView):
     def get(self, request, productId, format=None):
         user = self.request.user
-        print('a')
+
         try:
             product_id = int(productId)
         except:
@@ -114,7 +114,7 @@ class CreateProductReviewView(APIView):
         user = self.request.user
         data = self.request.data
 
-        print('sssssssss')
+
 
         try:
             rating = float(data['rating'])

@@ -8,6 +8,7 @@ urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('auth/', include('djoser.urls')),
                   path('auth/', include('djoser.urls.jwt')),
+                  path('auth/', include('djoser.social.urls')),
 
                   path('api/category/', include('apps.category.urls', namespace='category')),
                   path('api/product/', include('apps.product.urls', namespace='product')),

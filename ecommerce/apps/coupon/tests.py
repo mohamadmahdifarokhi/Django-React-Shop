@@ -1,5 +1,5 @@
 from datetime import datetime
-
+import pytz
 from django.test import TestCase
 from .models import Coupon
 
@@ -9,8 +9,8 @@ class CouponTestCase(TestCase):
         Coupon.objects.create(
             name='percentage',
             discount_percentage=10,
-            started='2018-01-01 00:00:00',
-            ended='2019-01-01 00:00:00',
+            started=datetime(2022, 11, 20, 20, 8, 7, 127325).replace(tzinfo=pytz.UTC),
+            ended=datetime(2023, 12, 20, 20, 8, 7, 127325).replace(tzinfo=pytz.UTC),
         )
 
     def test_coupon(self):

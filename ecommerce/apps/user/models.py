@@ -25,12 +25,12 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     def get_short_name(self):
         return self.first_name
 
-    def has_perm(self, perm, obj=None):
-        return True
-
-    # karbar be modela datresi dare ya na
-    def has_module_perms(self, app_label):
-        return True
+    # def has_perm(self, perm, obj=None):
+    #     return True
+    #
+    # # karbar be modela datresi dare ya na
+    # def has_module_perms(self, app_label):
+    #     return True
 
     def __str__(self):
         return self.email
