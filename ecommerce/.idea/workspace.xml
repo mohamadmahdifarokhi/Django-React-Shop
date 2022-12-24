@@ -4,34 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40afdd3c-8436-4e92-984d-8cd0664d8c65" name="Changes" comment="Change profile templates">
-      <change afterPath="$PROJECT_DIR$/bucket.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce/celery_conf.py" afterDir="false" />
+    <list default="true" id="40afdd3c-8436-4e92-984d-8cd0664d8c65" name="Changes" comment="Change app views">
+      <change afterPath="$PROJECT_DIR$/src/components/product/CartLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecommerce.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/coupon/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/coupon/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/order/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/order/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/order/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/product/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/review/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/review/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/product/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user_profile/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_profile/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/user_profile/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_profile/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user_profile/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_profile/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/wishlist/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/wishlist/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/photos/2022/12/19-113-768-01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/photos/2022/12/20-236-607-02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dashboard/DashboardLink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/DashboardLink.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/Dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/DashboardPaymentDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/DashboardPaymentDetail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/DashboardPayments.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/DashboardPayments.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/DashboardProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/DashboardProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/ProductsArrival.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/ProductsArrival.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/ProductsSold.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/ProductsSold.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigation/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/product/ProductCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/product/ProductCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Shop.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Shop.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/auth/Signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/Search.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/cancel.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/cancel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/collapse.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/collapse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/popup_response.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/popup_response.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,25 +69,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/pro/proj/Django-React-Ecommerce/ecommerce",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/pro/proj/Django-React-Ecommerce/ecommerce&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\PyCharm 2022.2.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\pro\proj\Django-React-Ecommerce\ecommerce" />
@@ -201,6 +200,9 @@
       <workItem from="1671162472624" duration="18717000" />
       <workItem from="1671207006110" duration="2049000" />
       <workItem from="1671269175779" duration="4143000" />
+      <workItem from="1671689492535" duration="10495000" />
+      <workItem from="1671789293916" duration="7925000" />
+      <workItem from="1671857142360" duration="11021000" />
     </task>
     <task id="LOCAL-00001" summary="Add all models | mti">
       <created>1670537851915</created>
@@ -468,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671137283146</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Change app views">
+      <created>1671689530756</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1671689530756</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,7 +495,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add payment templates" />
     <MESSAGE value="Add coupon actions" />
     <MESSAGE value="Add order action &amp; reducer" />
     <MESSAGE value="Add profile views" />
@@ -511,13 +519,15 @@
     <MESSAGE value="Change coupon admin" />
     <MESSAGE value="Change views" />
     <MESSAGE value="Change profile templates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change profile templates" />
+    <MESSAGE value="Change app views" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change app views" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ecommerce$views.coverage" NAME="views Coverage Results" MODIFIED="1669887606828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/product" />
     <SUITE FILE_PATH="coverage/ecommerce$Test__apps_user_tests.coverage" NAME="Test: apps.user.tests Coverage Results" MODIFIED="1670929611312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/ecommerce$settings.coverage" NAME="settings Coverage Results" MODIFIED="1670580529099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ecommerce" />
     <SUITE FILE_PATH="coverage/ecommerce$Test__apps_category_tests.coverage" NAME="Test: apps.category.tests Coverage Results" MODIFIED="1670927785724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$jantit.coverage" NAME="jantit Coverage Results" MODIFIED="1671738548510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../jantit" />
     <SUITE FILE_PATH="coverage/ecommerce$Test__apps_product_tests.coverage" NAME="Test: apps.product.tests Coverage Results" MODIFIED="1670929333339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/ecommerce$Test__apps_shipping_tests.coverage" NAME="Test: apps.shipping.tests Coverage Results" MODIFIED="1670929578017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/ecommerce$Test__apps_user_profile_tests.coverage" NAME="Test: apps.user_profile.tests Coverage Results" MODIFIED="1671184218042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -529,7 +539,7 @@
     <SUITE FILE_PATH="coverage/ecommerce$Test__apps_order_tests.coverage" NAME="Test: apps.order.tests Coverage Results" MODIFIED="1670932154586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/ecommerce$Test__apps_wishlist_tests.coverage" NAME="Test: apps.wishlist.tests Coverage Results" MODIFIED="1670931064334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/ecommerce$1.coverage" NAME="1 Coverage Results" MODIFIED="1669882221327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../t5" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__.coverage" NAME="Test:  Coverage Results" MODIFIED="1671185504597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__.coverage" NAME="Test:  Coverage Results" MODIFIED="1671793957560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/ecommerce$skyroom___Copy.coverage" NAME="skyroom - Copy Coverage Results" MODIFIED="1669871805157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Script-Skyroom" />
   </component>
 </project>

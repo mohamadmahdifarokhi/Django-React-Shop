@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import {connect} from 'react-redux'
 import { signup } from '../../redux/actions/auth'
 import pc from '../../img/pc-tower.png';
+import {Navigate} from "react-router";
 
 const Signup = ({
   signup
@@ -37,8 +38,13 @@ const Signup = ({
     e.preventDefault();
     signup(first_name, last_name, email, password, re_password);
     setAccountCreated(true);
-    window.scrollTo(0,0)
+    // window.scrollTo(0,0)
   }
+
+  if (accountCreated) {
+    return <Navigate to="/" />
+  }
+
 
   return (
     <Layout>

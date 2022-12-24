@@ -34,9 +34,5 @@ class UserProfile(BaseModel):
     phone = models.CharField(validators=[phone_regex], max_length=17)
     image = models.ImageField(upload_to='profiles/%Y/%m/')
 
-    def get_thumbnail(self):
-        if self.image:
-            return domain + self.image.url
-
     def __str__(self):
         return self.phone

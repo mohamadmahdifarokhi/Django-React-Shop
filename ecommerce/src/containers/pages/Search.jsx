@@ -11,6 +11,7 @@ import ProductCard from '../../components/product/ProductCard'
 import {prices} from '../../helpers/fixedPrices'
 import Navbar from '../../components/navigation/Navbar'
 import Footer from '../../components/navigation/Footer'
+import CartLoader from "../../components/product/CartLoader";
 
 const sortOptions = [
     {name: 'Most Popular', href: '#', current: true},
@@ -77,6 +78,8 @@ const Search = ({
                     searched_products,
                     filtered_products
                 }) => {
+
+    const [loading, setLoading] = useState(true)
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
     const [filtered, setFiltered] = useState(false)
     const [formData, setFormData] = useState({
@@ -93,10 +96,23 @@ const Search = ({
         order
     } = formData
 
+    const sleep = ms => new Promise(
+        resolve => setTimeout(resolve, ms)
+    );
+
     useEffect(() => {
-        get_categories()
-        get_products()
-        window.scrollTo(0, 0)
+        async function fetchData() {
+            setLoading(true)
+            console.log(loading)
+            get_categories()
+            get_products()
+            await sleep(3000);
+            window.scrollTo(0, 0)
+            setLoading(false)
+            console.log(loading)
+        }
+
+        fetchData();
     }, [])
 
     const onChange = e => setFormData({...formData, [e.target.name]: e.target.value})
@@ -119,9 +135,11 @@ const Search = ({
         ) {
             filtered_products.map((product, index) => {
                 return display.push(
-                    <div key={index}>
-                        <ProductCard product={product}/>
-                    </div>
+                    <>
+                        {loading ? <CartLoader/> : <div key={index}>
+                            <ProductCard product={product}/>
+                        </div>}
+                    </>
                 );
             });
         } else if (
@@ -131,9 +149,11 @@ const Search = ({
         ) {
             searched_products.map((product, index) => {
                 return display.push(
-                    <div key={index}>
-                        <ProductCard product={product}/>
-                    </div>
+                    <>
+                        {loading ? <CartLoader/> : <div key={index}>
+                            <ProductCard product={product}/>
+                        </div>}
+                    </>
                 );
             });
         }
@@ -400,10 +420,10 @@ const Search = ({
                         <div
                             className="relative z-10 flex items-baseline justify-between pt-24 pb-6 border-b border-gray-200">
                             <h1 className="text-4xl font-extrabold tracking-tight text-gray-900">Shop
-                            ({searched_products &&
-                            searched_products !== null &&
-                            searched_products !== undefined &&
-                            searched_products.length})</h1>
+                                ({searched_products &&
+                                    searched_products !== null &&
+                                    searched_products !== undefined &&
+                                    searched_products.length})</h1>
 
                             <div className="flex items-center">
                                 <button

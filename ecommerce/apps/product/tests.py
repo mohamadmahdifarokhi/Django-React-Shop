@@ -33,10 +33,6 @@ class ProductTestCase(TestCase):
         self.assertNotEqual(product.description, 'description2')
         self.assertNotEqual(product.price, 200)
 
-    def test_get_thumbnail(self):
-        product = Product.objects.get(name='product1')
-        self.assertEqual(product.get_thumbnail(), '127.0.0.1:8000/media/photo1')
-
     def test_str(self):
         product = Product.objects.get(name='product1')
         self.assertEqual(product.__str__(), 'product1')

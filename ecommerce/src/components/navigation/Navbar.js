@@ -26,8 +26,8 @@ import {
 } from '@heroicons/react/outline'
 import {connect} from 'react-redux'
 import {logout} from '../../redux/actions/auth'
-import { get_categories } from '../../redux/actions/categories'
-import { get_search_products } from '../../redux/actions/products';
+import {get_categories} from '../../redux/actions/categories'
+import {get_search_products} from '../../redux/actions/products';
 import SearchBox from './SearchBox'
 import {ShoppingCartIcon} from '@heroicons/react/solid'
 import pc from '../../img/pc-tower.png';
@@ -103,7 +103,7 @@ function Navbar({
                     categories,
                     get_search_products,
                     total_items,
-                    profile
+                    profile,
                 }) {
 
     // eslint-disable-next-line
@@ -149,9 +149,7 @@ function Navbar({
                 <Menu.Button
                     className="inline-flex justify-center w-full rounded-full  text-sm font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
           <span className="inline-block h-10 w-10 rounded-full overflow-hidden bg-gray-100">
-            {/*<img src={profile.image} alt=""/>*/}
-            {/*<img src={user.image} alt=""/>*/}
-            {/*  <h3>{user.first_name}</h3>*/}
+              <img src={profile && profile.image} alt=""/>
           </span>
                 </Menu.Button>
             </div>

@@ -13,11 +13,4 @@ class WishListTestCase(TestCase):
         )
         WishList.objects.create(user=user)
 
-    # def test_wishlist(self):
-    #     user = UserAccount.objects.get(
-    #         email='mahdifarokhi@gmail.com'
-    #     )
-    #     wishlist = WishList.objects.get(user=user)
-    #     self.assertEqual(wishlist.total_items, 0)
-
 

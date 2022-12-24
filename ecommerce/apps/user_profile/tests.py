@@ -22,23 +22,3 @@ class UserProfileTestCase(TestCase):
             phone='wef',
             image='image',
         )
-
-    # def test_user_profile(self):
-    #     user = UserAccount.objects.get(
-    #         email='mahdifarokhi@gmail.com',
-    #     )
-
-    #     user_profile = UserProfile.objects.get(user=user)
-    #     self.assertEqual(user_profile.phone, '09123127203')
-    #     self.assertEqual(user_profile.image, 'image')
-    #     self.assertNotEqual(user_profile.phone, '091231272031')
-    #     self.assertNotEqual(user_profile.image, 'image1')
-    #     self.assertEqual(user_profile.address.body, 'onja')
-    #     self.assertEqual(user_profile.address.city, 'tehran')
-
-    # def test_str(self):
-    #     user = UserAccount.objects.get(
-    #         email='mahdifarokhi@gmail.com'
-    #     )
-    #     user_profile = UserProfile.objects.get(user=user)
-    #     self.assertEqual(user_profile.__str__(), '09123127203')

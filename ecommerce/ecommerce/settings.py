@@ -17,6 +17,8 @@ DOMAIN = os.environ.get('DOMAIN')
 ALLOWED_HOSTS = ['*']
 
 DJANGO_APPS = [
+    "admin_interface",
+    "colorfield",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,8 +42,11 @@ THIRD_PARTY_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'ckeditor',
     'ckeditor_uploader',
-    'storages'
+    'storages',
 ]
+
+# X_FRAME_OPTIONS = "SAMEORIGIN"
+# SILENCED_SYSTEM_CHECKS = ["security.W019"]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + ECOMMERCE_APPS + THIRD_PARTY_APPS
 
