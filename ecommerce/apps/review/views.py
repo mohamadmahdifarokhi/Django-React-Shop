@@ -8,7 +8,7 @@ from .models import Review
 class GetProductReviewsView(APIView):
     permission_classes = (permissions.AllowAny,)
 
-    def get(self, request, productId, format=None):
+    def get(self, request, productId):
         try:
             product_id = int(productId)
         except:
@@ -18,18 +18,18 @@ class GetProductReviewsView(APIView):
             )
 
         try:
-            if not Product.objects.filter(id=product_id).exists():
+            if not Product.objects.get_active_list().filter(id=product_id).exists():
                 return Response(
                     {'error': 'This product does not exist'},
                     status=status.HTTP_404_NOT_FOUND
                 )
 
-            product = Product.objects.get(id=product_id)
+            product = Product.objects.get_active_list().get(id=product_id)
 
             results = []
 
-            if Review.objects.filter(product=product).exists():
-                reviews = Review.objects.order_by(
+            if Review.objects.get_active_list().filter(product=product).exists():
+                reviews = Review.objects.get_active_list().order_by(
                     '-created'
                 ).filter(product=product)
 
@@ -58,7 +58,7 @@ class GetProductReviewsView(APIView):
 
 
 class GetProductReviewView(APIView):
-    def get(self, request, productId, format=None):
+    def get(self, request, productId):
         user = self.request.user
 
         try:
@@ -70,18 +70,18 @@ class GetProductReviewView(APIView):
             )
 
         try:
-            if not Product.objects.filter(id=product_id).exists():
+            if not Product.objects.get_active_list().filter(id=product_id).exists():
                 return Response(
                     {'error': 'This product does not exist'},
                     status=status.HTTP_404_NOT_FOUND
                 )
 
-            product = Product.objects.get(id=product_id)
+            product = Product.objects.get_active_list().get(id=product_id)
 
             result = {}
 
-            if Review.objects.filter(user=user, product=product).exists():
-                review = Review.objects.get(user=user, product=product)
+            if Review.objects.get_active_list().filter(user=user, product=product).exists():
+                review = Review.objects.get_active_list().get(user=user, product=product)
 
                 result['id'] = review.id
                 result['rating'] = review.rating
@@ -110,11 +110,9 @@ class GetProductReviewView(APIView):
 
 
 class CreateProductReviewView(APIView):
-    def post(self, request, productId, format=None):
+    def post(self, request, productId):
         user = self.request.user
         data = self.request.data
-
-
 
         try:
             rating = float(data['rating'])
@@ -133,24 +131,24 @@ class CreateProductReviewView(APIView):
             )
 
         try:
-            if not Product.objects.filter(id=productId).exists():
+            if not Product.objects.get_active_list().filter(id=productId).exists():
                 return Response(
                     {'error': 'This Product does not exist'},
                     status=status.HTTP_404_NOT_FOUND
                 )
 
-            product = Product.objects.get(id=productId)
+            product = Product.objects.get_active_list().get(id=productId)
 
             result = {}
             results = []
 
-            if Review.objects.filter(user=user, product=product).exists():
+            if Review.objects.get_active_list().filter(user=user, product=product).exists():
                 return Response(
                     {'error': 'Review for this course already created'},
                     status=status.HTTP_409_CONFLICT
                 )
 
-            review = Review.objects.create(
+            review = Review.objects.get_active_list().create(
                 user=user,
                 product=product,
                 rating=rating,
@@ -158,7 +156,7 @@ class CreateProductReviewView(APIView):
                 body=body
             )
 
-            if Review.objects.filter(user=user, product=product).exists():
+            if Review.objects.get_active_list().filter(user=user, product=product).exists():
                 result['id'] = review.id
                 result['rating'] = review.rating
                 result['head'] = review.head
@@ -166,7 +164,7 @@ class CreateProductReviewView(APIView):
                 result['created'] = review.created
                 result['user'] = review.user.first_name
 
-                reviews = Review.objects.order_by('-created').filter(
+                reviews = Review.objects.get_active_list().order_by('-created').filter(
                     product=product
                 )
 
@@ -194,7 +192,7 @@ class CreateProductReviewView(APIView):
 
 
 class UpdateProductReviewView(APIView):
-    def put(self, request, productId, format=None):
+    def put(self, request, productId):
         user = self.request.user
         data = self.request.data
 
@@ -223,31 +221,31 @@ class UpdateProductReviewView(APIView):
             )
 
         try:
-            if not Product.objects.filter(id=product_id).exists():
+            if not Product.objects.get_active_list().filter(id=product_id).exists():
                 return Response(
                     {'error': 'This product does not exist'},
                     status=status.HTTP_404_NOT_FOUND
                 )
 
-            product = Product.objects.get(id=product_id)
+            product = Product.objects.get_active_list().get(id=product_id)
 
             result = {}
             results = []
 
-            if not Review.objects.filter(user=user, product=product).exists():
+            if not Review.objects.get_active_list().filter(user=user, product=product).exists():
                 return Response(
                     {'error': 'Review for this product does not exist'},
                     status=status.HTTP_404_NOT_FOUND
                 )
 
-            if Review.objects.filter(user=user, product=product).exists():
-                Review.objects.filter(user=user, product=product).update(
+            if Review.objects.get_active_list().filter(user=user, product=product).exists():
+                Review.objects.get_active_list().filter(user=user, product=product).update(
                     rating=rating,
                     head=head,
                     body=body
                 )
 
-                review = Review.objects.get(user=user, product=product)
+                review = Review.objects.get_active_list().get(user=user, product=product)
 
                 result['id'] = review.id
                 result['rating'] = review.rating
@@ -256,7 +254,7 @@ class UpdateProductReviewView(APIView):
                 result['created'] = review.created
                 result['user'] = review.user.first_name
 
-                reviews = Review.objects.order_by('-created').filter(
+                reviews = Review.objects.get_active_list().order_by('-created').filter(
                     product=product
                 )
 
@@ -284,7 +282,7 @@ class UpdateProductReviewView(APIView):
 
 
 class DeleteProductReviewView(APIView):
-    def delete(self, request, productId, format=None):
+    def delete(self, request, productId):
         user = self.request.user
 
         try:
@@ -296,20 +294,20 @@ class DeleteProductReviewView(APIView):
             )
 
         try:
-            if not Product.objects.filter(id=product_id).exists():
+            if not Product.objects.get_active_list().filter(id=product_id).exists():
                 return Response(
                     {'error': 'This product does not exist'},
                     status=status.HTTP_404_NOT_FOUND
                 )
 
-            product = Product.objects.get(id=product_id)
+            product = Product.objects.get_active_list().get(id=product_id)
 
             results = []
 
-            if Review.objects.filter(user=user, product=product).exists():
-                Review.objects.filter(user=user, product=product).delete()
+            if Review.objects.get_active_list().filter(user=user, product=product).exists():
+                Review.objects.get_active_list().filter(user=user, product=product).delete()
 
-                reviews = Review.objects.order_by('-created').filter(
+                reviews = Review.objects.get_active_list().order_by('-created').filter(
                     product=product
                 )
 
@@ -344,7 +342,7 @@ class DeleteProductReviewView(APIView):
 class FilterProductReviewsView(APIView):
     permission_classes = (permissions.AllowAny,)
 
-    def get(self, request, productId, format=None):
+    def get(self, request, productId):
         try:
             product_id = int(productId)
         except:
@@ -353,13 +351,13 @@ class FilterProductReviewsView(APIView):
                 status=status.HTTP_404_NOT_FOUND
             )
 
-        if not Product.objects.filter(id=product_id).exists():
+        if not Product.objects.get_active_list().filter(id=product_id).exists():
             return Response(
                 {'error': 'This product does not exist'},
                 status=status.HTTP_404_NOT_FOUND
             )
 
-        product = Product.objects.get(id=product_id)
+        product = Product.objects.get_active_list().get(id=product_id)
 
         rating = request.query_params.get('rating')
 
@@ -381,13 +379,13 @@ class FilterProductReviewsView(APIView):
 
             results = []
 
-            if Review.objects.filter(product=product).exists():
+            if Review.objects.get_active_list().filter(product=product).exists():
                 if rating == 0.5:
-                    reviews = Review.objects.order_by('-created').filter(
+                    reviews = Review.objects.get_active_list().order_by('-created').filter(
                         rating=rating, product=product
                     )
                 else:
-                    reviews = Review.objects.order_by('-created').filter(
+                    reviews = Review.objects.get_active_list().order_by('-created').filter(
                         rating__lte=rating,
                         product=product
                     ).filter(

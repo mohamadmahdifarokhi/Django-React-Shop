@@ -9,21 +9,21 @@ from apps.product.serializers import ProductSerializer
 
 
 class GetItemsView(APIView):
-    def get(self, request, format=None):
+    def get(self, request):
         user = self.request.user
         try:
-            cart = Cart.objects.get(user=user)
-            cart_items = CartItem.objects.order_by('product').filter(cart=cart)
+            cart = Cart.objects.get_active_list().get(user=user)
+            cart_items = CartItem.objects.get_active_list().order_by('product').filter(cart=cart)
 
             result = []
 
-            if CartItem.objects.filter(cart=cart).exists():
+            if CartItem.objects.get_active_list().filter(cart=cart).exists():
                 for cart_item in cart_items:
                     item = {}
 
                     item['id'] = cart_item.id
                     item['count'] = cart_item.count
-                    product = Product.objects.get(id=cart_item.product.id)
+                    product = Product.objects.get_active_list().get(id=cart_item.product.id)
                     product = ProductSerializer(product)
 
                     item['product'] = product.data
@@ -37,10 +37,10 @@ class GetItemsView(APIView):
 
 
 class AddItemView(APIView):
-    def post(self, request, format=None):
+    def post(self, request):
         user = self.request.user
         data = self.request.data
-
+        print('fff')
         try:
             product_id = int(data['product_id'])
         except:
@@ -51,32 +51,32 @@ class AddItemView(APIView):
         count = 1
 
         try:
-            if not Product.objects.filter(id=product_id).exists():
+            if not Product.objects.get_active_list().filter(id=product_id).exists():
                 return Response(
                     {'error': 'This product does not exist'},
                     status=status.HTTP_404_NOT_FOUND)
 
-            product = Product.objects.get(id=product_id)
+            product = Product.objects.get_active_list().get(id=product_id)
 
-            cart = Cart.objects.get(user=user)
+            cart = Cart.objects.get_active_list().get(user=user)
 
-            if CartItem.objects.filter(cart=cart, product=product).exists():
+            if CartItem.objects.get_active_list().filter(cart=cart, product=product).exists():
                 return Response(
                     {'error': 'Item is already in cart'},
                     status=status.HTTP_409_CONFLICT)
 
             if int(product.count) > 0:
-                CartItem.objects.create(
+                CartItem.objects.get_active_list().create(
                     product=product, cart=cart, count=count
                 )
 
-                if CartItem.objects.filter(cart=cart, product=product).exists():
+                if CartItem.objects.get_active_list().filter(cart=cart, product=product).exists():
                     total_items = int(cart.total_items) + 1
-                    Cart.objects.filter(user=user).update(
+                    Cart.objects.get_active_list().filter(user=user).update(
                         total_items=total_items
                     )
 
-                    cart_items = CartItem.objects.order_by(
+                    cart_items = CartItem.objects.get_active_list().order_by(
                         'product').filter(cart=cart)
 
                     result = []
@@ -85,7 +85,7 @@ class AddItemView(APIView):
                         item = {}
                         item['id'] = cart_item.id
                         item['count'] = cart_item.count
-                        product = Product.objects.get(id=cart_item.product.id)
+                        product = Product.objects.get_active_list().get(id=cart_item.product.id)
                         product = ProductSerializer(product)
 
                         item['product'] = product.data
@@ -104,12 +104,12 @@ class AddItemView(APIView):
 
 
 class GetTotalView(APIView):
-    def get(self, request, format=None):
+    def get(self, request):
         user = self.request.user
 
         try:
-            cart = Cart.objects.get(user=user)
-            cart_items = CartItem.objects.filter(cart=cart)
+            cart = Cart.objects.get_active_list().get(user=user)
+            cart_items = CartItem.objects.get_active_list().filter(cart=cart)
 
             total_cost = 0.0
             total_discount_cost = 0.0
@@ -132,10 +132,10 @@ class GetTotalView(APIView):
 
 
 class GetItemTotalView(APIView):
-    def get(self, request, format=None):
+    def get(self, request):
         user = self.request.user
         try:
-            cart = CartItem.objects.filter(cart__user=user)
+            cart = CartItem.objects.get_active_list().filter(cart__user=user)
             total_items = len(cart)
 
             return Response(
@@ -148,7 +148,7 @@ class GetItemTotalView(APIView):
 
 
 class UpdateItemView(APIView):
-    def put(self, request, format=None):
+    def put(self, request):
         user = self.request.user
         data = self.request.data
 
@@ -167,15 +167,15 @@ class UpdateItemView(APIView):
                 status=status.HTTP_404_NOT_FOUND)
 
         try:
-            if not Product.objects.filter(id=product_id).exists():
+            if not Product.objects.get_active_list().filter(id=product_id).exists():
                 return Response(
                     {'error': 'This product does not exist'},
                     status=status.HTTP_404_NOT_FOUND)
 
-            product = Product.objects.get(id=product_id)
-            cart = Cart.objects.get(user=user)
+            product = Product.objects.get_active_list().get(id=product_id)
+            cart = Cart.objects.get_active_list().get(user=user)
 
-            if not CartItem.objects.filter(cart=cart, product=product).exists():
+            if not CartItem.objects.get_active_list().filter(cart=cart, product=product).exists():
                 return Response(
                     {'error': 'This product is not in your cart'},
                     status=status.HTTP_404_NOT_FOUND)
@@ -183,11 +183,11 @@ class UpdateItemView(APIView):
             quantity = product.count
 
             if count <= quantity:
-                CartItem.objects.filter(
+                CartItem.objects.get_active_list().filter(
                     product=product, cart=cart
                 ).update(count=count)
 
-                cart_items = CartItem.objects.order_by(
+                cart_items = CartItem.objects.get_active_list().order_by(
                     'product').filter(cart=cart)
 
                 result = []
@@ -197,7 +197,7 @@ class UpdateItemView(APIView):
 
                     item['id'] = cart_item.id
                     item['count'] = cart_item.count
-                    product = Product.objects.get(id=cart_item.product.id)
+                    product = Product.objects.get_active_list().get(id=cart_item.product.id)
                     product = ProductSerializer(product)
 
                     item['product'] = product.data
@@ -216,7 +216,7 @@ class UpdateItemView(APIView):
 
 
 class RemoveItemView(APIView):
-    def delete(self, request, format=None):
+    def delete(self, request):
         user = self.request.user
         data = self.request.data
 
@@ -228,37 +228,37 @@ class RemoveItemView(APIView):
                 status=status.HTTP_404_NOT_FOUND)
 
         try:
-            if not Product.objects.filter(id=product_id).exists():
+            if not Product.objects.get_active_list().filter(id=product_id).exists():
                 return Response(
                     {'error': 'This product does not exist'},
                     status=status.HTTP_404_NOT_FOUND)
 
-            product = Product.objects.get(id=product_id)
-            cart = Cart.objects.get(user=user)
+            product = Product.objects.get_active_list().get(id=product_id)
+            cart = Cart.objects.get_active_list().get(user=user)
 
-            if not CartItem.objects.filter(cart=cart, product=product).exists():
+            if not CartItem.objects.get_active_list().filter(cart=cart, product=product).exists():
                 return Response(
                     {'error': 'This product is not in your cart'},
                     status=status.HTTP_404_NOT_FOUND)
 
-            CartItem.objects.filter(cart=cart, product=product).delete()
+            CartItem.objects.get_active_list().filter(cart=cart, product=product).delete()
 
-            if not CartItem.objects.filter(cart=cart, product=product).exists():
+            if not CartItem.objects.get_active_list().filter(cart=cart, product=product).exists():
                 # actualizar numero total en el carrito
                 total_items = int(cart.total_items) - 1
-                Cart.objects.filter(user=user).update(total_items=total_items)
+                Cart.objects.get_active_list().filter(user=user).update(total_items=total_items)
 
-            cart_items = CartItem.objects.order_by('product').filter(cart=cart)
+            cart_items = CartItem.objects.get_active_list().order_by('product').filter(cart=cart)
 
             result = []
 
-            if CartItem.objects.filter(cart=cart).exists():
+            if CartItem.objects.get_active_list().filter(cart=cart).exists():
                 for cart_item in cart_items:
                     item = {}
 
                     item['id'] = cart_item.id
                     item['count'] = cart_item.count
-                    product = Product.objects.get(id=cart_item.product.id)
+                    product = Product.objects.get_active_list().get(id=cart_item.product.id)
                     product = ProductSerializer(product)
 
                     item['product'] = product.data
@@ -273,21 +273,21 @@ class RemoveItemView(APIView):
 
 
 class EmptyCartView(APIView):
-    def delete(self, request, format=None):
+    def delete(self, request):
         user = self.request.user
 
         try:
-            cart = Cart.objects.get(user=user)
+            cart = Cart.objects.get_active_list().get(user=user)
 
-            if not CartItem.objects.filter(cart=cart).exists():
+            if not CartItem.objects.get_active_list().filter(cart=cart).exists():
                 return Response(
                     {'success': 'Cart is already empty'},
                     status=status.HTTP_200_OK)
 
-            CartItem.objects.filter(cart=cart).delete()
+            CartItem.objects.get_active_list().filter(cart=cart).delete()
 
             # Actualizamos carrito
-            Cart.objects.filter(user=user).update(total_items=0)
+            Cart.objects.get_active_list().filter(user=user).update(total_items=0)
 
             return Response(
                 {'success': 'Cart emptied successfully'},
@@ -299,7 +299,7 @@ class EmptyCartView(APIView):
 
 
 class SynchCartView(APIView):
-    def put(self, request, format=None):
+    def put(self, request):
         user = self.request.user
         data = self.request.data
 
@@ -307,7 +307,7 @@ class SynchCartView(APIView):
             cart_items = data['cart_items']
 
             for cart_item in cart_items:
-                cart = Cart.objects.get(user=user)
+                cart = Cart.objects.get_active_list().get(user=user)
 
                 try:
                     product_id = int(cart_item['product_id'])
@@ -316,17 +316,17 @@ class SynchCartView(APIView):
                         {'error': 'Product ID must be an integer'},
                         status=status.HTTP_404_NOT_FOUND)
 
-                if not Product.objects.filter(id=product_id).exists():
+                if not Product.objects.get_active_list().filter(id=product_id).exists():
                     return Response(
                         {'error': 'Product with this ID does not exist'},
                         status=status.HTTP_404_NOT_FOUND)
 
-                product = Product.objects.get(id=product_id)
+                product = Product.objects.get_active_list().get(id=product_id)
                 quantity = product.count
 
-                if CartItem.objects.filter(cart=cart, product=product).exists():
+                if CartItem.objects.get_active_list().filter(cart=cart, product=product).exists():
                     # Actualiizamos el item del carrito
-                    item = CartItem.objects.get(cart=cart, product=product)
+                    item = CartItem.objects.get_active_list().get(cart=cart, product=product)
                     count = item.count
 
                     try:
@@ -337,7 +337,7 @@ class SynchCartView(APIView):
                     # Chqueo con base de datos
                     if (cart_item_count + int(count)) <= int(quantity):
                         updated_count = cart_item_count + int(count)
-                        CartItem.objects.filter(
+                        CartItem.objects.get_active_list().filter(
                             cart=cart, product=product
                         ).update(count=updated_count)
                 else:
@@ -348,14 +348,14 @@ class SynchCartView(APIView):
                         cart_item_count = 1
 
                     if cart_item_count <= quantity:
-                        CartItem.objects.create(
+                        CartItem.objects.get_active_list().create(
                             product=product, cart=cart, count=cart_item_count
                         )
 
-                        if CartItem.objects.filter(cart=cart, product=product).exists():
+                        if CartItem.objects.get_active_list().filter(cart=cart, product=product).exists():
                             # Sumar item
                             total_items = int(cart.total_items) + 1
-                            Cart.objects.filter(user=user).update(
+                            Cart.objects.get_active_list().filter(user=user).update(
                                 total_items=total_items
                             )
 

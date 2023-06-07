@@ -5,7 +5,7 @@ import {
     get_total,
     get_item_total
 } from "../../redux/actions/cart";
-import {useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {Navigate} from 'react-router';
 import DashboardLink from '../../components/dashboard/DashboardLink';
 import {Fragment, useState} from 'react'
@@ -25,7 +25,7 @@ import {
 } from '@heroicons/react/outline'
 import {SearchIcon} from '@heroicons/react/solid'
 import {Link} from 'react-router-dom';
-import {countries} from '../../helpers/fixedCountries';
+import {cities} from '../../helpers/fixedCities';
 import {update_user_profile} from '../../redux/actions/profile';
 import Loader from 'react-loader-spinner';
 
@@ -54,6 +54,7 @@ const DashboardProfile = ({
 
     const [sidebarOpen, setSidebarOpen] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [comp, setComp] = useState(false)
 
     useEffect(() => {
         get_items()
@@ -88,10 +89,15 @@ const DashboardProfile = ({
             image,
         );
         setLoading(false)
-        window.scrollTo(0, 0);
+        setComp(true)
+
+        // window.scrollTo(0, 0);
     };
 
     if (!isAuthenticated)
+        return <Navigate to="/"/>
+
+    if (comp)
         return <Navigate to="/"/>
 
     function Imaged(e) {
@@ -280,9 +286,14 @@ const DashboardProfile = ({
                                 <form onSubmit={e => onSubmit(e)} className="max-w-3xl mx-auto">
 
 
-                                    <div className="bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
+                                    <div className="bg-white py-5 border-b border-gray-200 flex flex-row">
+                                        <span className="inline-block h-10 w-10 rounded-full overflow-hidden bg-gray-100 mr-4">
+                                          <img className="ps-5" src={profile && profile.image} alt=""/>
+                                        </span>
                                         <h3 className="text-lg leading-6 font-medium text-gray-900">Profile</h3>
                                     </div>
+
+
 
                                     <div
                                         className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
@@ -290,6 +301,7 @@ const DashboardProfile = ({
                                                className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
                                             Image
                                         </label>
+
                                         <div className="mt-1 sm:mt-0 sm:col-span-2">
                                             <div className="max-w-lg flex rounded-md shadow-sm">
 
@@ -328,10 +340,10 @@ const DashboardProfile = ({
                                     </div>
 
                                     <div
-                                        className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                                        className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
                                         <label htmlFor="city"
                                                className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                                            City ({address.city})
+                                            City
                                         </label>
                                         <div className="mt-1 sm:mt-0 sm:col-span-2">
                                             <select
@@ -341,8 +353,8 @@ const DashboardProfile = ({
                                             >
                                                 <option value={city}>{address.city}</option>
                                                 {
-                                                    countries && countries.map((country, index) => (
-                                                        <option key={index} value={country.name}>{country.name}</option>
+                                                    cities && cities.map((ci, index) => (
+                                                        <option key={index} value={ci.name}>{ci.name}</option>
                                                     ))
                                                 }
                                             </select>

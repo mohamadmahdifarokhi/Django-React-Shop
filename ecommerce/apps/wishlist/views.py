@@ -8,19 +8,19 @@ from apps.product.serializers import ProductSerializer
 
 
 class GetItemsView(APIView):
-    def get(self, request, format=None):
+    def get(self, request):
         user = self.request.user
 
         try:
-            wishlist = WishList.objects.get(user=user)
-            wishlist_items = WishListItem.objects.filter(wishlist=wishlist)
+            wishlist = WishList.objects.get_active_list().get(user=user)
+            wishlist_items = WishListItem.objects.get_active_list().filter(wishlist=wishlist)
             result = []
 
-            if WishListItem.objects.filter(wishlist=wishlist).exists():
+            if WishListItem.objects.get_active_list().filter(wishlist=wishlist).exists():
                 for wishlist_item in wishlist_items:
                     item = {}
                     item['id'] = wishlist_item.id
-                    product = Product.objects.get(id=wishlist_item.product.id)
+                    product = Product.objects.get_active_list().get(id=wishlist_item.product.id)
                     product = ProductSerializer(product)
                     item['product'] = product.data
                     result.append(item)
@@ -36,9 +36,10 @@ class GetItemsView(APIView):
 
 
 class AddItemView(APIView):
-    def post(self, request, format=None):
+    def post(self, request):
         user = self.request.user
         data = self.request.data
+        print('sdf')
 
         try:
             product_id = int(data['product_id'])
@@ -49,55 +50,55 @@ class AddItemView(APIView):
             )
 
         try:
-            if not Product.objects.filter(id=product_id).exists():
+            if not Product.objects.get_active_list().filter(id=product_id).exists():
                 return Response(
                     {'error': 'This product does not exist'},
                     status=status.HTTP_404_NOT_FOUND
                 )
 
-            product = Product.objects.get(id=product_id)
-            wishlist = WishList.objects.get(user=user)
+            product = Product.objects.get_active_list().get(id=product_id)
+            wishlist = WishList.objects.get_active_list().get(user=user)
 
-            if WishListItem.objects.filter(wishlist=wishlist, product=product).exists():
+            if WishListItem.objects.get_active_list().filter(wishlist=wishlist, product=product).exists():
                 return Response(
                     {'error': 'Item already in wishlist'},
                     status=status.HTTP_409_CONFLICT
                 )
 
-            WishListItem.objects.create(
+            WishListItem.objects.get_active_list().create(
                 product=product,
                 wishlist=wishlist
             )
 
-            if WishListItem.objects.filter(product=product, wishlist=wishlist).exists():
+            if WishListItem.objects.get_active_list().filter(product=product, wishlist=wishlist).exists():
                 total_items = int(wishlist.total_items) + 1
-                WishList.objects.filter(user=user).update(
+                WishList.objects.get_active_list().filter(user=user).update(
                     total_items=total_items
                 )
 
-                cart = Cart.objects.get(user=user)
+                cart = Cart.objects.get_active_list().get(user=user)
 
-                if CartItem.objects.filter(cart=cart, product=product).exists():
-                    CartItem.objects.filter(
+                if CartItem.objects.get_active_list().filter(cart=cart, product=product).exists():
+                    CartItem.objects.get_active_list().filter(
                         cart=cart,
                         product=product
                     ).delete()
 
-                    if not CartItem.objects.filter(cart=cart, product=product).exists():
+                    if not CartItem.objects.get_active_list().filter(cart=cart, product=product).exists():
                         # actualizar items totales ene l carrito
                         total_items = int(cart.total_items) - 1
-                        Cart.objects.filter(user=user).update(
+                        Cart.objects.get_active_list().filter(user=user).update(
                             total_items=total_items
                         )
 
-            wishlist_items = WishListItem.objects.filter(wishlist=wishlist)
+            wishlist_items = WishListItem.objects.get_active_list().filter(wishlist=wishlist)
             result = []
 
             for wishlist_item in wishlist_items:
                 item = {}
 
                 item['id'] = wishlist_item.id
-                product = Product.objects.get(id=wishlist_item.product.id)
+                product = Product.objects.get_active_list().get(id=wishlist_item.product.id)
                 product = ProductSerializer(product)
 
                 item['product'] = product.data
@@ -117,11 +118,11 @@ class AddItemView(APIView):
 
 
 class GetItemTotalView(APIView):
-    def get(self, request, format=None):
+    def get(self, request):
         user = self.request.user
 
         try:
-            wishlist = WishList.objects.get(user=user)
+            wishlist = WishList.objects.get_active_list().get(user=user)
             total_items = wishlist.total_items
 
             return Response(
@@ -136,10 +137,12 @@ class GetItemTotalView(APIView):
 
 
 class RemoveItemView(APIView):
-    def delete(self, request, format=None):
+    def delete(self, request):
         user = self.request.user
         data = self.request.data
-
+        print('ddd')
+        print(data)
+        print(user, data['product_id'])
         try:
             product_id = int(data['product_id'])
         except:
@@ -149,51 +152,56 @@ class RemoveItemView(APIView):
             )
 
         try:
-            wishlist = WishList.objects.get(user=user)
-            if not Product.objects.filter(id=product_id).exists():
+            wishlist = WishList.objects.get_active_list().get(user=user)
+            if not Product.objects.get_active_list().filter(id=product_id).exists():
                 return Response(
                     {'error': 'Product with this ID does not exist'},
                     status=status.HTTP_404_NOT_FOUND
                 )
-            product = Product.objects.get(id=product_id)
-            if not WishListItem.objects.filter(wishlist=wishlist, product=product).exists():
+
+            print('0000')
+            product = Product.objects.get_active_list().get(id=product_id)
+            if not WishListItem.objects.get_active_list().filter(wishlist=wishlist, product=product).exists():
                 return Response(
                     {'error': 'This product is not in your wishlist'},
                     status=status.HTTP_404_NOT_FOUND
                 )
-            WishListItem.objects.filter(
+            WishListItem.objects.get_active_list().filter(
                 wishlist=wishlist,
                 product=product
             ).delete()
 
-            if not WishListItem.objects.filter(wishlist=wishlist, product=product).exists():
-                # Actualiizar el total de items en el wishlist
+            print('1111')
+
+            if not WishListItem.objects.get_active_list().filter(wishlist=wishlist, product=product).exists():
                 total_items = int(wishlist.total_items) - 1
-                WishList.objects.filter(user=user).update(
+                WishList.objects.get_active_list().filter(user=user).update(
                     total_items=total_items
                 )
 
-            wishlist_items = WishListItem.objects.filter(wishlist=wishlist)
+            wishlist_items = WishListItem.objects.get_active_list().filter(wishlist=wishlist)
 
             result = []
-
-            if WishListItem.objects.filter(wishlist=wishlist).exists():
+            print('wwwwww')
+            if WishListItem.objects.get_active_list().filter(wishlist=wishlist).exists():
                 for wishlist_item in wishlist_items:
                     item = {}
 
                     item['id'] = wishlist_item.id
-                    product = Product.objects.get(id=wishlist_item.product.id)
+                    product = Product.objects.get_active_list().get(id=wishlist_item.product.id)
                     product = ProductSerializer(product)
 
                     item['product'] = product.data
 
                     result.append(item)
+            print('vvvvvvvvv')
 
             return Response(
                 {'wishlist': result},
                 status=status.HTTP_200_OK
             )
         except:
+            print('ggg')
             return Response(
                 {'error': 'Something went wrong when removing wishlist item'},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
