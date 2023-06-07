@@ -281,9 +281,9 @@ const DashboardPaymentDetail = ({
                 &middot;
               </span>
                                                             </dt>
-                                                            <dd className="font-medium text-gray-900">
-                                                                <time dateTime="2021-03-22">March 22, 2021</time>
-                                                            </dd>
+                                                            {/*<dd className="font-medium text-gray-900">*/}
+                                                            {/*    <time dateTime="2021-03-22">March 22, 2021</time>*/}
+                                                            {/*</dd>*/}
                                                         </dl>
                                                     </div>
 
@@ -304,28 +304,23 @@ const DashboardPaymentDetail = ({
                                                                             <Link
                                                                                 to={`/product/${product.id}`}>{product.name}</Link>
                                                                         </h3>
-                                                                        <p className="font-medium text-gray-900 mt-1">Transaction
-                                                                            ID: {product.transaction_id}</p>
+
+                                                                        <div className="flex-shrink-0">
+                                                                        <img
+                                                                            src={product.photo}
+                                                                            alt=""
+                                                                            className="w-24 h-24 rounded-md object-center object-cover sm:w-48 sm:h-48"
+                                                                        />
+                                                                        </div>
+
                                                                         <p className="text-gray-500 mt-3">{product.description}</p>
                                                                     </div>
                                                                     <div className="sm:col-span-12 md:col-span-7">
                                                                         <dl className="grid grid-cols-1 gap-y-8 border-b py-8 border-gray-200 sm:grid-cols-2 sm:gap-x-6 sm:py-6 md:py-10">
+
                                                                             <div>
-                                                                                <dt className="font-medium text-gray-900">Delivery
-                                                                                    address
-                                                                                </dt>
-                                                                                <dd className="mt-3 text-gray-500">
-                                                                                    <span
-                                                                                        className="block">{product.address_line_1}</span>
-                                                                                    <span
-                                                                                        className="block">{product.address_line_2}</span>
-                                                                                </dd>
-                                                                            </div>
-                                                                            <div>
-                                                                                <dt className="font-medium text-gray-900">Shipping</dt>
                                                                                 <dd className="mt-3 text-gray-500 space-y-3">
-                                                                                    <p>$ {product.shipping_price}</p>
-                                                                                    <p>$ {product.amount} Total Cost</p>
+                                                                                    <p>$ {product.price} Total Cost</p>
 
                                                                                 </dd>
                                                                             </div>
@@ -333,33 +328,39 @@ const DashboardPaymentDetail = ({
                                                                         <p className="font-medium text-gray-900 mt-6 md:mt-10">
                                                                             Status: {product.status}
                                                                         </p>
-                                                                        <div className="mt-6">
+
+                                                                                                                                            <div className="mt-6">
+                                                                        <div
+                                                                            className="bg-gray-200 rounded-full overflow-hidden">
                                                                             <div
-                                                                                className="bg-gray-200 rounded-full overflow-hidden">
-                                                                                <div
-                                                                                    className="h-2 bg-indigo-600 rounded-full"
-                                                                                    style={{width: `calc((${product.step} * 2 + 1) / 8 * 100%)`}}
-                                                                                />
+                                                                                className="h-2 bg-indigo-600 rounded-full"
+                                                                                style={{width: `calc((${product.step} * 2 + 1) / 8 * 100%)`}}
+                                                                            />
+                                                                        </div>
+                                                                        <div
+                                                                            className="hidden sm:grid grid-cols-5 font-medium text-gray-600 mt-6">
+                                                                            <div className="text-indigo-600">NotStarted
                                                                             </div>
                                                                             <div
-                                                                                className="hidden sm:grid grid-cols-4 font-medium text-gray-600 mt-6">
-                                                                                <div className="text-indigo-600">Order
-                                                                                    placed
-                                                                                </div>
-                                                                                <div
-                                                                                    className={classNames(product.step > 0 ? 'text-indigo-600' : '', 'text-center')}>
-                                                                                    Processing
-                                                                                </div>
-                                                                                <div
-                                                                                    className={classNames(product.step > 1 ? 'text-indigo-600' : '', 'text-center')}>
-                                                                                    Shipped
-                                                                                </div>
-                                                                                <div
-                                                                                    className={classNames(product.step > 2 ? 'text-indigo-600' : '', 'text-right')}>
-                                                                                    Delivered
-                                                                                </div>
+                                                                                className={classNames(product.status > 0 ? 'text-indigo-600' : '', 'text-center')}>
+                                                                                processed
+                                                                            </div>
+                                                                            <div
+                                                                                className={classNames(product.step > 1 ? 'text-indigo-600' : '', 'text-center')}>
+                                                                                shipped
+                                                                            </div>
+                                                                            <div
+                                                                                className={classNames(product.step > 2 ? 'text-indigo-600' : '', 'text-right')}>
+                                                                                delivered
+                                                                            </div>
+                                                                            <div
+                                                                                className={classNames(product.step > 3 ? 'text-indigo-600' : '', 'text-right')}>
+                                                                                cancelled
                                                                             </div>
                                                                         </div>
+                                                                    </div>
+
+
                                                                     </div>
                                                                 </div>
                                                             ))}

@@ -333,16 +333,14 @@ const DashboardPayments = ({
                                                                             </dt>
                                                                             <dd className="mt-3 text-gray-500">
                                                                                 <span
-                                                                                    className="block">{product.address_line_1}</span>
-                                                                                <span
-                                                                                    className="block">{product.address_line_2}</span>
+                                                                                    className="block">{product.address}</span>
                                                                             </dd>
                                                                         </div>
                                                                         <div>
                                                                             <dt className="font-medium text-gray-900">Shipping</dt>
                                                                             <dd className="mt-3 text-gray-500 space-y-3">
                                                                                 <p>$ {product.shipping_price}</p>
-                                                                                <p>$ {product.amount} Total Cost</p>
+                                                                                <p>$ {product.price} Total Cost</p>
 
                                                                             </dd>
                                                                         </div>
@@ -359,21 +357,24 @@ const DashboardPayments = ({
                                                                             />
                                                                         </div>
                                                                         <div
-                                                                            className="hidden sm:grid grid-cols-4 font-medium text-gray-600 mt-6">
-                                                                            <div className="text-indigo-600">Order
-                                                                                placed
+                                                                            className="hidden sm:grid grid-cols-5 font-medium text-gray-600 mt-6">
+                                                                            <div className="text-indigo-600">Not Started
                                                                             </div>
                                                                             <div
-                                                                                className={classNames(product.step > 0 ? 'text-indigo-600' : '', 'text-center')}>
-                                                                                Processing
+                                                                                className={classNames(product.status > 0 ? 'text-indigo-600' : '', 'text-center')}>
+                                                                                processed
                                                                             </div>
                                                                             <div
                                                                                 className={classNames(product.step > 1 ? 'text-indigo-600' : '', 'text-center')}>
-                                                                                Shipped
+                                                                                shipped
                                                                             </div>
                                                                             <div
                                                                                 className={classNames(product.step > 2 ? 'text-indigo-600' : '', 'text-right')}>
-                                                                                Delivered
+                                                                                delivered
+                                                                            </div>
+                                                                            <div
+                                                                                className={classNames(product.step > 3 ? 'text-indigo-600' : '', 'text-right')}>
+                                                                                cancelled
                                                                             </div>
                                                                         </div>
                                                                     </div>

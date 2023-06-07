@@ -5,28 +5,42 @@ from .models import Order, OrderItem
 
 
 class ListOrdersView(APIView):
-    def get(self, request, format=None):
+    def get(self, request):
         user = self.request.user
+        print('d')
         try:
-            orders = Order.objects.order_by('-date_issued').filter(user=user)
+            orders = Order.objects.get_active_list().order_by('-created').filter(user=user)
             result = []
 
             for order in orders:
                 item = {}
-                item['status'] = order.status
-                item['transaction_id'] = order.transaction_id
-                item['amount'] = order.amount
+                item['user'] = order.user.first_name
+                item['coupon'] = order.coupon
+                item['transaction_id'] = str(order.transaction_id)
+                item['full_name'] = order.full_name
+                item['address'] = order.address
+                item['city'] = order.city
+                item['price'] = order.price
+                item['discount_price'] = order.discount_price
+                item['shipping_name'] = order.shipping_name
                 item['shipping_price'] = order.shipping_price
-                item['date_issued'] = order.date_issued
-                item['address_line_1'] = order.address_line_1
-                item['address_line_2'] = order.address_line_2
+                item['shipping_time'] = order.shipping_time
+                item['status'] = order.status
+                statuss = ['not_processed', 'processed', 'shipped', 'delivered', 'cancelled']
+                count = -1
+                for i in statuss:
+                    count += 1
+                    if order.status == i:
+                        item['step'] = count
 
                 result.append(item)
+            print(result)
             return Response(
                 {'orders': result},
                 status=status.HTTP_200_OK
             )
-        except:
+        except Exception as e:
+            print(e)
             return Response(
                 {'error': 'Something went wrong when retrieving orders'},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
@@ -34,30 +48,27 @@ class ListOrdersView(APIView):
 
 
 class ListOrderDetailView(APIView):
-    def get(self, request, transactionId, format=None):
+    def get(self, request, transactionId):
         user = self.request.user
-
+        print('------------')
         try:
-            if Order.objects.filter(user=user, transaction_id=transactionId).exists():
-                order = Order.objects.get(user=user, transaction_id=transactionId)
+            if Order.objects.get_active_list().filter(user=user, transaction_id=transactionId).exists():
+                order = Order.objects.get_active_list().get(user=user, transaction_id=transactionId)
                 result = {}
-                result['status'] = order.status
-                result['transaction_id'] = order.transaction_id
-                result['amount'] = order.amount
+                result['coupon'] = order.coupon
+                result['transaction_id'] = str(order.transaction_id)
                 result['full_name'] = order.full_name
-                result['address_line_1'] = order.address_line_1
-                result['address_line_2'] = order.address_line_2
+                result['address'] = order.address
                 result['city'] = order.city
-                result['state_province_region'] = order.state_province_region
-                result['postal_zip_code'] = order.postal_zip_code
-                result['country_region'] = order.country_region
-                result['telephone_number'] = order.telephone_number
+                result['price'] = order.price
+                result['discount_price'] = order.discount_price
                 result['shipping_name'] = order.shipping_name
-                result['shipping_time'] = order.shipping_time
                 result['shipping_price'] = order.shipping_price
-                result['date_issued'] = order.date_issued
+                result['shipping_time'] = order.shipping_time
+                result['status'] = order.status
 
-                order_items = OrderItem.objects.order_by('-date_added').filter(order=order)
+
+                order_items = OrderItem.objects.get_active_list().order_by('-created').filter(order=order)
                 result['order_items'] = []
 
                 for order_item in order_items:
@@ -66,8 +77,17 @@ class ListOrderDetailView(APIView):
                     sub_item['name'] = order_item.name
                     sub_item['price'] = order_item.price
                     sub_item['count'] = order_item.count
+                    print(order_item.product.photo.url)
+                    sub_item['photo'] = order_item.product.photo.url
+                    statuss = ['not_processed', 'processed', 'shipped', 'delivered', 'cancelled']
+                    count = -1
+                    for i in statuss:
+                        count += 1
+                        if order.status == i:
+                            sub_item['step'] = count
 
                     result['order_items'].append(sub_item)
+                print(result)
                 return Response(
                     {'order': result},
                     status=status.HTTP_200_OK

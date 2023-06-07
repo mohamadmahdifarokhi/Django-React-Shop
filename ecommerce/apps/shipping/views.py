@@ -8,9 +8,11 @@ from .serializers import ShippingSerializer
 class GetShippingView(APIView):
     permission_classes = (permissions.AllowAny, )
 
-    def get(self, request, format=None):
-        if Shipping.objects.all().exists():
-            shipping_options = Shipping.objects.order_by('price').all()
+    def post(self, request):
+        if Shipping.objects.get_active_list().all().exists():
+            data = self.request.data
+            city = data['city']
+            shipping_options = Shipping.objects.get_active_list().filter(city=city).order_by('price')
             shipping_options = ShippingSerializer(shipping_options, many=True)
 
             return Response(

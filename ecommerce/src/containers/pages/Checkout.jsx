@@ -14,13 +14,13 @@ import {
 
 import {
     get_payment_total,
-    get_client_token,
+    // get_client_token,
     process_payment
 } from '../../redux/actions/payment';
 
 import DropIn from 'braintree-web-drop-in-react';
 import Loader from 'react-loader-spinner';
-import {countries} from '../../helpers/fixedCountries'
+import {cities} from '../../helpers/fixedCities';
 import ShippingForm from '../../components/checkout/ShippingForm'
 
 const Checkout = ({
@@ -33,7 +33,7 @@ const Checkout = ({
                       shipping,
                       refresh,
                       get_payment_total,
-                      get_client_token,
+                      // get_client_token,
                       process_payment,
                       user,
                       total_items,
@@ -47,7 +47,9 @@ const Checkout = ({
                       estimated_tax,
                       shipping_cost,
                       check_coupon,
-                      coupon
+                      coupon,
+                      profile,
+                      addresss
                   }) => {
 
     const [formData, setFormData] = useState({
@@ -76,14 +78,26 @@ const Checkout = ({
         shipping_id,
     } = formData;
 
-    const onChange = e => setFormData({...formData, [e.target.name]: e.target.value});
+    const onChange = e => {
+
+        console.log(e.target.name, e.target.value);
+        console.log(e.target.name, e.target.value);
+        if (e.target.name === 'city') {
+            get_shipping_options(e.target.value)
+        }
+        setFormData({...formData, [e.target.name]: e.target.value});
+    }
 
     const buy = async e => {
         e.preventDefault();
-        let nonce = await data.instance.requestPaymentMethod();
+        console.log('retert')
+
+        // let nonce = await data.instance.requestPaymentMethod();
         if (coupon && coupon !== null && coupon !== undefined) {
+            console.log('shipping_id')
+            console.log(shipping_id)
             process_payment(
-                nonce,
+                // nonce,
                 full_name,
                 address,
                 city,
@@ -94,8 +108,10 @@ const Checkout = ({
                 shipping_id,
             );
         } else {
+            console.log('shipping_id')
+            console.log(shipping_id)
             process_payment(
-                nonce,
+                // nonce,
                 full_name,
                 address,
                 city,
@@ -116,11 +132,11 @@ const Checkout = ({
 
     useEffect(() => {
         window.scrollTo(0, 0)
-        get_shipping_options()
+        // get_shipping_options()
     }, [])
 
     useEffect(() => {
-        get_client_token();
+        // get_client_token();
     }, [user]);
 
     useEffect(() => {
@@ -180,7 +196,7 @@ const Checkout = ({
                                 />
                                 <label className='ml-4'>
                                     {shipping_option.name} -
-                                    ${shipping_option.price} ({shipping_option.time_to_delivery})
+                                    ${shipping_option.price} ({shipping_option.time})
                                 </label>
                             </div>
                         ))
@@ -191,27 +207,32 @@ const Checkout = ({
     };
 
     const renderPaymentInfo = () => {
-        if (!clientToken) {
-            if (!isAuthenticated) {
-                <Link
-                    to="/login"
-                    className="w-full bg-gray-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-gray-500"
-                >
-                    Login
-                </Link>
-            } else {
-                <button
-                    className="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
-                >
-                    <Loader
-                        type='Oval'
-                        color='#fff'
-                        height={20}
-                        widht={20}
-                    />
-                </button>
-            }
-        } else {
+        // if (!clientToken) {
+        //     if (!isAuthenticated) {
+        //         return (
+        //             <Link
+        //                 to="/login"
+        //                 className="w-full bg-gray-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-gray-500"
+        //             >
+        //                 Login
+        //             </Link>
+        //         )
+        //     } else {
+        //         return(
+        //             <button
+        //             className="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
+        //             >
+        //                 <Loader
+        //                     type='Oval'
+        //                     color='#fff'
+        //                     height={20}
+        //                     widht={20}
+        //                 />
+        //             </button>
+        //         )
+        //
+        //     }
+        // } else {
             return (
                 <>
                     <DropIn
@@ -239,11 +260,12 @@ const Checkout = ({
                                 className="w-full bg-green-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-green-500"
                             >
                                 Place Order
-                            </button>}
+                            </button>
+                        }
                     </div>
                 </>
             )
-        }
+        // }
     }
 
     if (made_payment)
@@ -269,10 +291,10 @@ const Checkout = ({
 
                         <ShippingForm
                             user={user}
-                            full_name={full_name}
-                            address={address}
-                            city={city}
-                            phone={phone}
+                            full_name={user.get_full_name}
+                            address={addresss.body}
+                            city={addresss.city}
+                            phone={profile.phone}
                             total_amount={total_amount}
                             total_after_coupon={total_after_coupon}
                             total_discount_amount={total_discount_amount}
@@ -287,6 +309,7 @@ const Checkout = ({
                             coupon={coupon}
                             apply_coupon={apply_coupon}
                             coupon_name={coupon_name}
+                            cities={cities}
                         />
 
 
@@ -312,6 +335,8 @@ const mapStateToProps = state => ({
     estimated_tax: state.Payment.estimated_tax,
     shipping_cost: state.Payment.shipping_cost,
     coupon: state.Coupons.coupon,
+    profile: state.Profile.profile,
+    addresss: state.Address.address,
 })
 
 export default connect(mapStateToProps, {
@@ -321,7 +346,7 @@ export default connect(mapStateToProps, {
     get_shipping_options,
     refresh,
     get_payment_total,
-    get_client_token,
+    // get_client_token,
     process_payment,
     check_coupon
 })(Checkout)

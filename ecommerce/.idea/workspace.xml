@@ -4,32 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40afdd3c-8436-4e92-984d-8cd0664d8c65" name="Changes" comment="Change app views">
-      <change afterPath="$PROJECT_DIR$/src/components/product/CartLoader.js" afterDir="false" />
+    <list default="true" id="40afdd3c-8436-4e92-984d-8cd0664d8c65" name="Changes" comment="Add skeleton for product">
+      <change afterPath="$PROJECT_DIR$/apps/order/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecommerce.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/product/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/product/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user_profile/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_profile/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user_profile/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_profile/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/wishlist/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/wishlist/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cart/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/coupon/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/coupon/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/order/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/payment/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/payment/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/payment/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/payment/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/review/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/review/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/shipping/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/shipping/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user_profile/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user_profile/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/wishlist/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/wishlist/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/ProductsArrival.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/ProductsArrival.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/ProductsSold.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/ProductsSold.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/product/ProductCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/product/ProductCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Shop.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Shop.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/auth/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/Search.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/cancel.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/cancel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/collapse.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/collapse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/popup_response.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/popup_response.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cart/WishlistItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cart/WishlistItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/checkout/ShippingForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkout/ShippingForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigation/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/product/WishlistHeart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/product/WishlistHeart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/Cart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/Checkout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/Checkout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/DashboardPaymentDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/DashboardPaymentDetail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/DashboardPayments.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/DashboardPayments.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/DashboardProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/DashboardProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/productDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/productDetail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/fixedCountries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/fixedCities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/shipping.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/shipping.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +48,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -81,7 +84,8 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;E:\\PyCharm 2022.2.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;
+    &quot;ts.external.directory.path&quot;: &quot;E:\\PyCharm 2022.2.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -145,6 +149,28 @@
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../t5" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../t5/1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="ecommerce" type="Python.DjangoServer" factoryName="Django server">
       <module name="ecommerce" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -171,6 +197,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.1" />
         <item itemvalue="Django tests.Test: apps.user_profile.tests.UserProfileTestCase" />
         <item itemvalue="Django tests.Test: apps.user.tests" />
       </list>
@@ -202,7 +229,39 @@
       <workItem from="1671269175779" duration="4143000" />
       <workItem from="1671689492535" duration="10495000" />
       <workItem from="1671789293916" duration="7925000" />
-      <workItem from="1671857142360" duration="11021000" />
+      <workItem from="1671857142360" duration="26847000" />
+      <workItem from="1671934902596" duration="14934000" />
+      <workItem from="1671960550148" duration="1083000" />
+      <workItem from="1671963600037" duration="4371000" />
+      <workItem from="1672069921670" duration="1230000" />
+      <workItem from="1672106963555" duration="21762000" />
+      <workItem from="1672214249811" duration="14387000" />
+      <workItem from="1672261722132" duration="691000" />
+      <workItem from="1672300705036" duration="809000" />
+      <workItem from="1672389913379" duration="3298000" />
+      <workItem from="1672845519845" duration="2256000" />
+      <workItem from="1672942661591" duration="2216000" />
+      <workItem from="1672981052845" duration="20053000" />
+      <workItem from="1673088471741" duration="689000" />
+      <workItem from="1673099964074" duration="11000" />
+      <workItem from="1673444649587" duration="2164000" />
+      <workItem from="1676363301483" duration="669000" />
+      <workItem from="1679489976996" duration="3642000" />
+      <workItem from="1679563662352" duration="752000" />
+      <workItem from="1679653436053" duration="585000" />
+      <workItem from="1681603078485" duration="1863000" />
+      <workItem from="1682087591705" duration="28000" />
+      <workItem from="1682253770510" duration="2237000" />
+      <workItem from="1682281783967" duration="585000" />
+      <workItem from="1683144508602" duration="1329000" />
+      <workItem from="1683208835996" duration="591000" />
+      <workItem from="1684430022016" duration="746000" />
+      <workItem from="1684683506571" duration="4276000" />
+      <workItem from="1685288910636" duration="612000" />
+      <workItem from="1685317148863" duration="5084000" />
+      <workItem from="1685326582356" duration="1205000" />
+      <workItem from="1685613404794" duration="461000" />
+      <workItem from="1686134632347" duration="1987000" />
     </task>
     <task id="LOCAL-00001" summary="Add all models | mti">
       <created>1670537851915</created>
@@ -477,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671689530756</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Add skeleton for product">
+      <created>1671869086642</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1671869086642</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +561,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add coupon actions" />
     <MESSAGE value="Add order action &amp; reducer" />
     <MESSAGE value="Add profile views" />
     <MESSAGE value="Add profile template" />
@@ -520,26 +585,29 @@
     <MESSAGE value="Change views" />
     <MESSAGE value="Change profile templates" />
     <MESSAGE value="Change app views" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change app views" />
+    <MESSAGE value="Add skeleton for product" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add skeleton for product" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ecommerce$1.coverage" NAME="1 Coverage Results" MODIFIED="1672989123436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../t5" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_user_profile_tests.coverage" NAME="Test: apps.user_profile.tests Coverage Results" MODIFIED="1671184218042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/ecommerce$views.coverage" NAME="views Coverage Results" MODIFIED="1669887606828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/product" />
     <SUITE FILE_PATH="coverage/ecommerce$Test__apps_user_tests.coverage" NAME="Test: apps.user.tests Coverage Results" MODIFIED="1670929611312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$settings.coverage" NAME="settings Coverage Results" MODIFIED="1670580529099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ecommerce" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_category_tests.coverage" NAME="Test: apps.category.tests Coverage Results" MODIFIED="1670927785724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$jantit.coverage" NAME="jantit Coverage Results" MODIFIED="1671738548510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../jantit" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_product_tests.coverage" NAME="Test: apps.product.tests Coverage Results" MODIFIED="1670929333339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_shipping_tests.coverage" NAME="Test: apps.shipping.tests Coverage Results" MODIFIED="1670929578017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_user_profile_tests.coverage" NAME="Test: apps.user_profile.tests Coverage Results" MODIFIED="1671184218042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_coupon_tests.coverage" NAME="Test: apps.coupon.tests Coverage Results" MODIFIED="1671184654803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$cgpt.coverage" NAME="cgpt Coverage Results" MODIFIED="1672260109909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../chatgpt" />
     <SUITE FILE_PATH="coverage/ecommerce$Test__apps_review_tests.coverage" NAME="Test: apps.review.tests Coverage Results" MODIFIED="1670929443895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_cart_tests.coverage" NAME="Test: apps.cart.tests Coverage Results" MODIFIED="1670927674891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_user_profile_tests_UserProfileTestCase.coverage" NAME="Test: apps.user_profile.tests.UserProfileTestCase Coverage Results" MODIFIED="1670930994575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$models.coverage" NAME="models Coverage Results" MODIFIED="1670932393954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/user_profile" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_order_tests.coverage" NAME="Test: apps.order.tests Coverage Results" MODIFIED="1670932154586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_wishlist_tests.coverage" NAME="Test: apps.wishlist.tests Coverage Results" MODIFIED="1670931064334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/ecommerce$1.coverage" NAME="1 Coverage Results" MODIFIED="1669882221327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../t5" />
-    <SUITE FILE_PATH="coverage/ecommerce$Test__.coverage" NAME="Test:  Coverage Results" MODIFIED="1671793957560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$jantit.coverage" NAME="jantit Coverage Results" MODIFIED="1672236534988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../jantit" />
     <SUITE FILE_PATH="coverage/ecommerce$skyroom___Copy.coverage" NAME="skyroom - Copy Coverage Results" MODIFIED="1669871805157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Script-Skyroom" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_product_tests.coverage" NAME="Test: apps.product.tests Coverage Results" MODIFIED="1670929333339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_coupon_tests.coverage" NAME="Test: apps.coupon.tests Coverage Results" MODIFIED="1671184654803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_category_tests.coverage" NAME="Test: apps.category.tests Coverage Results" MODIFIED="1670927785724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_order_tests.coverage" NAME="Test: apps.order.tests Coverage Results" MODIFIED="1670932154586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$models.coverage" NAME="models Coverage Results" MODIFIED="1670932393954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/user_profile" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_shipping_tests.coverage" NAME="Test: apps.shipping.tests Coverage Results" MODIFIED="1670929578017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_user_profile_tests_UserProfileTestCase.coverage" NAME="Test: apps.user_profile.tests.UserProfileTestCase Coverage Results" MODIFIED="1670930994575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_wishlist_tests.coverage" NAME="Test: apps.wishlist.tests Coverage Results" MODIFIED="1670931064334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$settings.coverage" NAME="settings Coverage Results" MODIFIED="1670580529099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ecommerce" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__apps_cart_tests.coverage" NAME="Test: apps.cart.tests Coverage Results" MODIFIED="1670927674891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ecommerce$sn.coverage" NAME="sn Coverage Results" MODIFIED="1672237215293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../jantit" />
+    <SUITE FILE_PATH="coverage/ecommerce$Test__.coverage" NAME="Test:  Coverage Results" MODIFIED="1671793957560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

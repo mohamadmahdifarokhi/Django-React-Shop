@@ -12,7 +12,7 @@ class GetUserProfileView(APIView):
     def get(self, request):
         try:
             user = self.request.user
-            user_profile = UserProfile.objects.get(user=user)
+            user_profile = UserProfile.objects.get_active_list().get(user=user)
             user_profile = UserProfileSerializer(user_profile)
 
             return Response(
@@ -31,7 +31,7 @@ class GetUserAddressView(APIView):
     def post(self, request):
         try:
             user = self.request.user
-            user_profile = UserProfile.objects.get(user=user)
+            user_profile = UserProfile.objects.get_active_list().get(user=user)
             address = user_profile.address
             address = AddressSerializer(address)
 
@@ -57,8 +57,8 @@ class UpdateUserProfileView(APIView):
             phone = data['phone']
             image = data['image']
 
-            user_profile = UserProfile.objects.get(user=user)
-            address = Address.objects.get(id=user_profile.address.id)
+            user_profile = UserProfile.objects.get_active_list().get(user=user)
+            address = Address.objects.get_active_list().get(id=user_profile.address.id)
 
             if body == '':
                 body = address.body
@@ -72,18 +72,20 @@ class UpdateUserProfileView(APIView):
             if image == '':
                 image = user_profile.image
 
-            address = Address.objects.create(
+            print(image)
+
+            address = Address.objects.get_active_list().create(
                 body=body,
                 city=city,
             )
 
-            UserProfile.objects.filter(user=user).update(
+            UserProfile.objects.get_active_list().filter(user=user).update(
                 address=address,
                 phone=phone,
                 image=image
             )
 
-            user_profile = UserProfile.objects.get(user=user)
+            user_profile = UserProfile.objects.get_active_list().get(user=user)
             user_profile = UserProfileSerializer(user_profile)
 
             return Response(

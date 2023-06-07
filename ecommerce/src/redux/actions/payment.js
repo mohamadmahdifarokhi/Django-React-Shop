@@ -42,39 +42,40 @@ export const get_payment_total = (shipping_id, coupon_name) => async dispatch =>
     }
 }
 
-export const get_client_token = () => async dispatch => {
-    const config = {
-        headers: {
-            'Accept': 'application/json',
-            'Authorization': `JWT ${localStorage.getItem('access')}`
-        }
-    };
-
-    try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/payment/get-token`, config);
-
-        if (res.status === 200) {
-            dispatch({
-                type: LOAD_BT_TOKEN_SUCCESS,
-                payload: res.data
-            });
-        } else {
-            dispatch({
-                type: LOAD_BT_TOKEN_FAIL
-            });
-        }
-    } catch (err) {
-        dispatch({
-            type: LOAD_BT_TOKEN_FAIL
-        });
-    }
-}
+// export const get_client_token = () => async dispatch => {
+//     const config = {
+//         headers: {
+//             'Accept': 'application/json',
+//             'Authorization': `JWT ${localStorage.getItem('access')}`
+//         }
+//     };
+//
+//     try {
+//         const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/payment/get-token`, config);
+//
+//         if (res.status === 200) {
+//             dispatch({
+//                 type: LOAD_BT_TOKEN_SUCCESS,
+//                 payload: res.data
+//             });
+//         } else {
+//             dispatch({
+//                 type: LOAD_BT_TOKEN_FAIL
+//             });
+//         }
+//     } catch (err) {
+//         dispatch({
+//             type: LOAD_BT_TOKEN_FAIL
+//         });
+//     }
+// }
 
 export const process_payment = (
-    nonce,
+    // nonce,
     full_name,
     address,
     city,
+    phone,
     price,
     discount_price,
     coupon_name,
@@ -89,10 +90,11 @@ export const process_payment = (
     };
 
     const body = JSON.stringify({
-        nonce,
+        // nonce,
         full_name,
         address,
         city,
+        phone,
         price,
         discount_price,
         coupon_name,

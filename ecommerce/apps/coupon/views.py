@@ -6,31 +6,24 @@ from .serializers import CouponSerializer
 
 
 class CheckCouponView(APIView):
-    def get(self, request, format=None):
+    def get(self, request):
         try:
             coupon_name = request.query_params.get('coupon_name')
+            print(coupon_name)
 
-            # if FixedPriceCoupon.objects.filter(name=coupon_name).exists():
-            #     coupon = FixedPriceCoupon.objects.get(name=coupon_name)
-            #     coupon = FixedPriceCouponSerializer(coupon)
-            #
-            #     return Response(
-            #         {'coupon': coupon.data},
-            #         status=status.HTTP_200_OK
-            #     )
-            # elif PercentageCoupon.objects.filter(name=coupon_name).exists():
-            #     coupon = PercentageCoupon.objects.get(name=coupon_name)
-            #     coupon = PercentageCouponSerializer(coupon)
-            #
-            #     return Response(
-            #         {'coupon': coupon.data},
-            #         status=status.HTTP_200_OK
-            #     )
-            # else:
-            #     return Response(
-            #         {'error': 'Coupon code not found'},
-            #         status=status.HTTP_404_NOT_FOUND
-            #     )
+            if Coupon.objects.get_active_list().filter(name=coupon_name).exists():
+                coupon = Coupon.objects.get_active_list().get(name=coupon_name)
+                coupon = CouponSerializer(coupon)
+
+                return Response(
+                    {'coupon': coupon.data},
+                    status=status.HTTP_200_OK
+                )
+            else:
+                return Response(
+                    {'error': 'Coupon code not found'},
+                    status=status.HTTP_404_NOT_FOUND
+                )
         except:
             return Response(
                 {'error': 'Something went wrong when checking coupon'},

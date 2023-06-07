@@ -2,6 +2,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { UploadIcon, XIcon, CheckIcon, ClockIcon } from "@heroicons/react/solid";
 import { useEffect } from "react";
+import {connect} from "react-redux";
+import {get_item_total, get_items, get_total, remove_item, update_item} from "../../redux/actions/cart";
+import {setAlert} from "../../redux/actions/alert";
+import {remove_wishlist_item} from "../../redux/actions/wishlist";
 const WishlistItem = ({
     item,
     count,
@@ -44,7 +48,8 @@ const WishlistItem = ({
     }
 
     const removeItemHandler = async () => {
-        await remove_wishlist_item(item);
+        await remove_wishlist_item(item.product.id);
+        // WishlistItem();
         window.location.reload(false);
     };
 
@@ -137,3 +142,18 @@ const WishlistItem = ({
     )
 }
 export default WishlistItem
+
+
+// const mapStateToProps = state => ({
+//     wishlist_items: state.Wishlist.items,
+// })
+//
+// export default connect(mapStateToProps,{
+//     get_items,
+//     get_total,
+//     get_item_total,
+//     remove_item,
+//     update_item,
+//     setAlert,
+//     remove_wishlist_item
+// }) (WishlistItem)
